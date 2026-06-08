@@ -19,6 +19,7 @@ export type CaseStudy = {
   services: string[];
   testimonial?: { quote: string; author: string; role: string };
   featured?: boolean;
+  image?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -51,6 +52,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       role: 'Founder, Elevate Coaching',
     },
     featured: true,
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&q=80&auto=format&fit=crop',
   },
   {
     id: '2',
@@ -76,6 +78,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     services: ['Branding', 'Paid Ads', 'Creative Design', 'Funnel Building'],
     featured: true,
+    image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&h=600&q=80&auto=format&fit=crop',
   },
   {
     id: '3',
@@ -101,6 +104,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     services: ['Branding', 'Content Marketing', 'Lead Generation'],
     featured: true,
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&q=80&auto=format&fit=crop',
   },
   {
     id: '4',
@@ -125,5 +129,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Website Conv.', before: '1.8%', after: '5.4%', growth: '+200%' },
     ],
     services: ['Branding', 'Website Design', 'Performance Marketing'],
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&q=80&auto=format&fit=crop',
   },
 ];

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Syne } from 'next/font/google';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { createMetadata, organizationJsonLd, websiteJsonLd } from '@/lib/seo';
@@ -12,31 +12,29 @@ const inter = Inter({
   display: 'swap',
 });
 
-const syne = Syne({
-  variable: '--font-syne',
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument',
   subsets: ['latin'],
+  weight: '400',
   display: 'swap',
 });
 
 export const metadata: Metadata = createMetadata({
-  title: `${SITE.name} — ${SITE.tagline}`,
+  title: `${SITE.name} — Premium Branding & Growth Agency`,
   description: SITE.description,
   keywords: [
-    'creative growth agency',
     'branding agency',
-    'performance marketing',
-    'social media marketing',
-    'lead generation',
-    'funnel building',
+    'premium branding',
+    'creative growth agency',
     'personal branding',
-    'paid ads',
-    'website design',
+    'performance marketing',
+    'brand strategy',
   ],
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} h-full`}>
       <head>
         <script
           type="application/ld+json"

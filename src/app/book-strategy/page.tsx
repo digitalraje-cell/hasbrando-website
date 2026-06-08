@@ -4,62 +4,52 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = createMetadata({
   title: 'Book Strategy Call',
-  description:
-    'Book a free strategy call with HasBrando. Discuss your brand, marketing goals, and growth opportunities.',
+  description: 'Book a strategy call with HasBrando. Discuss your brand, positioning, and growth opportunities.',
   path: '/book-strategy',
-  keywords: ['book strategy call', 'free consultation', 'marketing strategy'],
 });
 
 export default function BookStrategyPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container relative">
+        <div className="container">
           <Reveal>
             <p className="section-label">Strategy Call</p>
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight">
-              Book your free <span className="text-gradient">strategy call</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[var(--text-muted)]">
-              30 minutes with a senior growth strategist. No pitch deck — just honest advice on how to grow your brand.
+            <h1 className="page-hero__title">Book your strategy call</h1>
+            <p className="page-hero__desc">
+              30 minutes with a senior strategist. Honest conversation about your brand and growth — no pitch deck required.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container grid gap-16 lg:grid-cols-5">
+      <section className="section section--light">
+        <div className="container grid gap-20 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
-            <h2 className="font-display text-2xl font-bold">What to expect</h2>
-            <ul className="mt-6 space-y-4">
+            <h2 className="font-display text-2xl tracking-tight">What to expect</h2>
+            <ul className="mt-8 space-y-5">
               {[
-                'Deep dive into your business and goals',
-                'Honest assessment of your current marketing',
-                'Tailored growth recommendations',
-                'Clear next steps — whether you work with us or not',
+                'Deep dive into your business and ambitions',
+                'Honest assessment of your current positioning',
+                'Tailored recommendations for your market',
+                'Clear next steps — whether we work together or not',
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-[var(--text-muted)]">
-                  <span className="text-[var(--accent)]">✓</span> {item}
+                <li key={item} className="text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  <span className="text-[var(--text)]">—</span> {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-sm text-[var(--text-subtle)]">
+            <p className="mt-10 text-sm text-[var(--text-subtle)]">
               Can&apos;t find a time?{' '}
-              <Link href="/contact" className="text-[var(--accent)] no-underline hover:underline">
-                Send us a message
-              </Link>{' '}
-              instead.
+              <Link href="/contact" className="text-[var(--text)] underline-offset-4 hover:underline">Send us a message</Link>
             </p>
           </Reveal>
-
           <Reveal delay={0.1} className="lg:col-span-3">
             <div className="calendly-placeholder">
               <div>
-                <p className="font-display text-xl font-semibold text-white">Calendly Integration</p>
-                <p className="mt-2 text-sm">
-                  Replace this placeholder with your Calendly embed:
-                </p>
-                <code className="mt-4 block rounded-lg bg-[var(--bg)] p-4 text-left text-xs text-[var(--text-muted)]">
+                <p className="font-display text-xl">Calendly Integration</p>
+                <p className="mt-3 text-sm text-[var(--text-muted)]">Replace with your Calendly embed:</p>
+                <code className="mt-6 block rounded-xl bg-[var(--bg-subtle)] p-5 text-left text-xs text-[var(--text-muted)]">
                   {`<iframe src="https://calendly.com/your-link" width="100%" height="600" />`}
                 </code>
               </div>

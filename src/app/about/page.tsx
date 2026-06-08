@@ -6,56 +6,58 @@ import { PROCESS_STEPS, WHY_US } from '@/lib/data/stats';
 
 export const metadata = createMetadata({
   title: 'About Us',
-  description:
-    'Learn about HasBrando — a premium creative growth agency helping founders, coaches, and brands scale internationally.',
+  description: 'Learn about HasBrando — a premium branding and growth agency for ambitious founders and brands.',
   path: '/about',
-  keywords: ['about HasBrando', 'creative agency', 'growth agency team'],
 });
 
 export default function AboutPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container relative">
+        <div className="container">
           <Reveal>
-            <p className="section-label">About HasBrando</p>
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight">
-              We build brands that <span className="text-gradient">win</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[var(--text-muted)]">
-              HasBrando is a premium creative growth agency for founders, coaches, consultants, and brands who refuse to compete on price. We combine world-class creative with performance marketing to deliver measurable growth.
+            <p className="section-label">About</p>
+            <h1 className="page-hero__title">We build brands that win</h1>
+            <p className="page-hero__desc">
+              HasBrando is a premium branding and growth agency for founders, coaches, and brands who refuse to compete on price.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container grid gap-16 lg:grid-cols-2">
+      <section className="section section--light">
+        <div className="container grid gap-20 lg:grid-cols-2">
           <Reveal>
-            <h2 className="font-display text-2xl font-bold">Our Vision</h2>
-            <p className="mt-4 text-[var(--text-muted)] leading-relaxed">
-              To become the most trusted creative growth partner for ambitious businesses worldwide — setting the standard for what premium agency work looks like in the digital age.
+            <p className="section-label">Vision</p>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+              Set the standard for premium agency work
+            </h2>
+            <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              To become the most trusted branding and growth partner for ambitious businesses worldwide — where creative excellence and strategic rigor are never compromised.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display text-2xl font-bold">Our Mission</h2>
-            <p className="mt-4 text-[var(--text-muted)] leading-relaxed">
-              To help every client we serve build a brand so compelling and a growth system so effective that they become the undeniable leader in their market.
+            <p className="section-label">Mission</p>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+              Make every client the leader in their market
+            </h2>
+            <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              To help every brand we serve build such compelling positioning and such effective growth systems that they become the undeniable choice in their category.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section bg-[var(--bg-elevated)]">
+      <section className="section section--subtle">
         <div className="container">
-          <SectionHeading label="Why Choose Us" title="What sets us apart" />
-          <div className="grid gap-8 md:grid-cols-2">
+          <SectionHeading label="Philosophy" title="What defines our work" />
+          <div className="why-grid">
             {WHY_US.map((item, i) => (
               <Reveal key={item.title} delay={i * 0.08}>
-                <div className="card">
-                  <span className="font-display text-sm font-bold text-[var(--accent)]">{item.icon}</span>
-                  <h3 className="mt-4 font-display text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--text-muted)]">{item.description}</p>
+                <div className="why-item">
+                  <p className="why-item__num">{item.icon}</p>
+                  <h3 className="why-item__title">{item.title}</h3>
+                  <p className="why-item__desc">{item.description}</p>
                 </div>
               </Reveal>
             ))}
@@ -63,47 +65,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container grid gap-16 lg:grid-cols-2">
+      <section className="section section--light">
+        <div className="container grid gap-20 lg:grid-cols-2">
           <Reveal>
-            <p className="section-label">Founder Story</p>
-            <h2 className="section-title">Built from a belief that great brands deserve great growth</h2>
-            <p className="mt-6 text-[var(--text-muted)] leading-relaxed">
-              HasBrando was founded on a simple observation: too many talented founders and businesses were invisible — not because they lacked expertise, but because they lacked the brand and growth systems to match their ambition.
+            <p className="section-label">Origin</p>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+              Great brands deserve great growth
+            </h2>
+            <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              HasBrando was founded on a conviction: too many talented businesses remain invisible — not from lack of expertise, but from lack of brand and growth systems worthy of their ambition.
             </p>
-            <p className="mt-4 text-[var(--text-muted)] leading-relaxed">
-              We set out to build an agency that combines the creative excellence of a top design studio with the data-driven rigor of a performance marketing team. Today, we partner with clients across 32+ countries to turn that vision into revenue.
+            <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              We built an agency that combines the creative excellence of a world-class studio with the strategic depth of a premium consulting firm. Today, we partner with clients across 32 countries.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="section-label">Team Culture</p>
-            <h2 className="section-title">Small team, outsized impact</h2>
-            <p className="mt-6 text-[var(--text-muted)] leading-relaxed">
-              We operate as a tight-knit team of strategists, designers, and growth marketers who care deeply about outcomes. No account managers reading scripts — you work directly with the people doing the work.
+            <p className="section-label">Culture</p>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+              Small team. Outsized impact.
+            </h2>
+            <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              You work directly with the strategists, designers, and growth leaders doing the work — not account managers reading scripts.
             </p>
-            <p className="mt-4 text-[var(--text-muted)] leading-relaxed">
-              Our culture is built on craftsmanship, transparency, and an obsession with results. We take on fewer clients so we can go deeper and deliver more.
+            <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-muted)]">
+              We take on fewer clients so we can go deeper. Craftsmanship, transparency, and outcomes define everything we do.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section bg-[var(--bg-elevated)]">
+      <section className="section section--subtle">
         <div className="container">
-          <SectionHeading
-            label="Approach"
-            title="Results-driven, always"
-            subtitle="Every engagement follows our proven four-step framework."
-            align="center"
-            className="mx-auto text-center"
-          />
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <SectionHeading label="Approach" title="How we deliver results" align="center" className="mx-auto text-center" />
+          <div className="process-grid">
             {PROCESS_STEPS.map((step, i) => (
               <Reveal key={step.step} delay={i * 0.1}>
-                <div className="text-center">
-                  <span className="font-display text-4xl font-bold text-gradient">{step.step}</span>
-                  <h3 className="mt-4 font-display text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--text-muted)]">{step.description}</p>
+                <div>
+                  <p className="process-step__num">{step.step}</p>
+                  <h3 className="process-step__title">{step.title}</h3>
+                  <p className="process-step__desc">{step.description}</p>
                 </div>
               </Reveal>
             ))}

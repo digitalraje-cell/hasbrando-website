@@ -3,6 +3,7 @@ import Link from 'next/link';
 type WordmarkProps = {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  variant?: 'light' | 'dark';
 };
 
 const sizes = {
@@ -11,14 +12,16 @@ const sizes = {
   lg: 'text-2xl',
 };
 
-export default function Wordmark({ className = '', size = 'md' }: WordmarkProps) {
+export default function Wordmark({ className = '', size = 'md', variant = 'dark' }: WordmarkProps) {
+  const color = variant === 'light' ? 'text-white' : 'text-[var(--text)]';
+
   return (
     <Link
       href="/"
-      className={`font-display font-bold tracking-tight text-white no-underline ${sizes[size]} ${className}`}
+      className={`font-display tracking-tight no-underline ${sizes[size]} ${color} ${className}`}
       aria-label="HasBrando — Home"
     >
-      Has<span className="text-gradient">Brando</span>
+      HasBrando
     </Link>
   );
 }

@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'HasBrando',
-  tagline: 'Premium Creative Growth Agency',
+  tagline: 'Premium Branding & Growth Agency',
   description:
     'HasBrando is a premium creative growth agency specializing in branding, performance marketing, content, and lead generation for ambitious founders and businesses worldwide.',
   url: 'https://hasbrando.com',

@@ -7,44 +7,28 @@ import { FAQS } from '@/lib/data/faqs';
 
 export const metadata = createMetadata({
   title: 'FAQ',
-  description: 'Frequently asked questions about HasBrando services, pricing, process, and engagement.',
+  description: 'Frequently asked questions about HasBrando services, process, and engagement.',
   path: '/faq',
-  keywords: ['FAQ', 'agency pricing', 'how we work'],
 });
 
 export default function FaqPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQS)) }}
-      />
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQS)) }} />
       <section className="page-hero">
-        <div className="container relative">
+        <div className="container">
           <Reveal>
             <p className="section-label">FAQ</p>
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight">
-              Questions? <span className="text-gradient">Answered.</span>
-            </h1>
+            <h1 className="page-hero__title">Questions, answered</h1>
           </Reveal>
         </div>
       </section>
-
-      <section className="section">
+      <section className="section section--light">
         <div className="container max-w-3xl">
-          <SectionHeading
-            title="Everything you need to know"
-            subtitle="Can't find what you're looking for? Reach out — we're happy to help."
-            align="center"
-            className="mx-auto text-center"
-          />
-          <Reveal>
-            <Accordion items={FAQS} />
-          </Reveal>
+          <SectionHeading title="Everything you need to know" subtitle="Can't find what you're looking for? We're happy to help." align="center" className="mx-auto text-center" />
+          <Reveal><Accordion items={FAQS} /></Reveal>
         </div>
       </section>
-
       <CtaSection />
     </>
   );

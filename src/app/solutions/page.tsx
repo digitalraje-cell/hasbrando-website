@@ -6,73 +6,56 @@ import { SOLUTIONS } from '@/lib/data/solutions';
 
 export const metadata = createMetadata({
   title: 'Solutions',
-  description:
-    'Tailored growth solutions for coaches, consultants, startups, D2C brands, personal brands, and local businesses.',
+  description: 'Tailored branding and growth solutions for coaches, consultants, startups, D2C brands, and personal brands.',
   path: '/solutions',
-  keywords: ['coaching marketing', 'startup growth', 'D2C marketing agency', 'personal branding'],
 });
 
 export default function SolutionsPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container relative">
+        <div className="container">
           <Reveal>
             <p className="section-label">Solutions</p>
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight">
-              Growth tailored to <span className="text-gradient">your business</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-[var(--text-muted)]">
-              Every business is different. We build custom growth strategies for your industry, audience, and goals.
+            <h1 className="page-hero__title">Built for your business</h1>
+            <p className="page-hero__desc">
+              Every engagement is tailored to your industry, audience, and ambitions — not adapted from a template.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container space-y-20">
-          {SOLUTIONS.map((solution) => (
+      <section className="section section--light">
+        <div className="container space-y-0">
+          {SOLUTIONS.map((solution, i) => (
             <Reveal key={solution.id}>
-              <article id={solution.id} className="scroll-mt-28">
-                <div className="card card-glow">
-                  <div className="grid gap-12 lg:grid-cols-2">
+              <article id={solution.id} className="scroll-mt-28 border-b border-[var(--border)] py-20 first:pt-0 last:border-b-0">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+                  <div>
+                    <p className="section-label">{String(i + 1).padStart(2, '0')}</p>
+                    <h2 className="font-display text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight">{solution.title}</h2>
+                    <p className="mt-3 text-lg text-[var(--text-muted)]">{solution.subtitle}</p>
+                    <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">{solution.description}</p>
+                    <Link href="/contact" className="btn btn-primary mt-10">Discuss Your Goals</Link>
+                  </div>
+                  <div className="space-y-10">
                     <div>
-                      <h2 className="font-display text-3xl font-bold">{solution.title}</h2>
-                      <p className="mt-2 text-lg text-[var(--accent)]">{solution.subtitle}</p>
-                      <p className="mt-4 text-[var(--text-muted)] leading-relaxed">{solution.description}</p>
-                      <Link href="/contact" className="btn btn-primary mt-8">
-                        Discuss Your Goals →
-                      </Link>
+                      <p className="service-detail__panel-title">Common Challenges</p>
+                      <ul className="service-detail__list mt-4">
+                        {solution.challenges.map((c) => <li key={c}>{c}</li>)}
+                      </ul>
                     </div>
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-subtle)]">Common Challenges</h3>
-                        <ul className="mt-3 space-y-2">
-                          {solution.challenges.map((c) => (
-                            <li key={c} className="text-sm text-[var(--text-muted)]">• {c}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-subtle)]">Our Approach</h3>
-                        <ul className="mt-3 space-y-2">
-                          {solution.approach.map((a) => (
-                            <li key={a} className="flex gap-2 text-sm text-[var(--text-muted)]">
-                              <span className="text-[var(--accent)]">→</span> {a}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-subtle)]">Expected Outcomes</h3>
-                        <ul className="mt-3 space-y-2">
-                          {solution.outcomes.map((o) => (
-                            <li key={o} className="flex gap-2 text-sm text-[var(--text-muted)]">
-                              <span className="text-[var(--accent-gold)]">★</span> {o}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div>
+                      <p className="service-detail__panel-title">Our Approach</p>
+                      <ul className="service-detail__list mt-4">
+                        {solution.approach.map((a) => <li key={a}>{a}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="service-detail__panel-title">Expected Outcomes</p>
+                      <ul className="service-detail__list mt-4">
+                        {solution.outcomes.map((o) => <li key={o}>{o}</li>)}
+                      </ul>
                     </div>
                   </div>
                 </div>
