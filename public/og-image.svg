@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#050505"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="t" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <circle cx="900" cy="200" r="300" fill="url(#g)"/>
+  <circle cx="300" cy="500" r="200" fill="url(#g)"/>
+  <text x="100" y="280" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#F5F5F5">Has</text>
+  <text x="100" y="380" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="url(#t)">Brando</text>
+  <text x="100" y="460" font-family="system-ui, sans-serif" font-size="28" fill="#94A3B8">Premium Creative Growth Agency</text>
+</svg>

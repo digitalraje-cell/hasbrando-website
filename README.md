@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HasBrando — Premium Creative Growth Agency Website
+
+A premium, conversion-focused agency website built with Next.js 16, TypeScript, and Tailwind CSS.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** (subtle animations)
+- **Resend** (contact form emails)
+- **Google Sheets** (optional lead storage)
+- **Telegram** (optional lead alerts)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and configure:
 
-## Learn More
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `RESEND_API_KEY` | Yes | Resend API key for contact form emails |
+| `CONTACT_TO_EMAIL` | No | Lead notification inbox (default: support@hasbrando.com) |
+| `CONTACT_RATE_LIMIT_DISABLED` | No | Set `true` for local dev |
+| `GOOGLE_SHEETS_SPREADSHEET_ID` | Optional | Google Sheet ID for lead storage |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Optional | GCP service account email |
+| `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | Optional | Service account private key |
+| `TELEGRAM_BOT_TOKEN` | Optional | Telegram bot token for alerts |
+| `TELEGRAM_CHAT_ID` | Optional | Telegram chat ID for alerts |
 
-To learn more about Next.js, take a look at the following resources:
+### Contact Flow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Visitor submits contact form → `POST /api/contact`
+2. **Required:** Lead email sent to `CONTACT_TO_EMAIL` via Resend
+3. **Parallel (non-blocking):** Auto-reply to visitor, Google Sheets row, Telegram alert
+4. Form succeeds only if the lead email sends successfully
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Google Sheets Setup
 
-## Deploy on Vercel
+Create a sheet with these columns (row 1):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`Submitted At | Full Name | Email | Phone | Business Name | Website | Services Interested In | Monthly Revenue | Biggest Challenge | Message | Source | Submission ID`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Share the sheet with your service account email (Editor access).
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home — hero, services, case studies, testimonials, FAQ |
+| `/about` | About, vision, mission, founder story |
+| `/services` | All 11 services with benefits, process, deliverables |
+| `/solutions` | Solutions by business type |
+| `/case-studies` | Case studies with before/after metrics |
+| `/portfolio` | Filterable portfolio gallery |
+| `/contact` | Contact form with full automation |
+| `/book-strategy` | Calendly booking placeholder |
+| `/faq` | FAQ accordion with schema markup |
+| `/blog` | SEO-ready blog listing |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
+
+## Deploy to Vercel
+
+1. Push to GitHub
+2. Import project in [Vercel](https://vercel.com)
+3. Add environment variables from `.env.example`
+4. Deploy — Vercel auto-detects Next.js
+
+### Custom Domain
+
+1. Add `hasbrando.com` in Vercel project settings → Domains
+2. Update DNS records as instructed by Vercel
+3. Verify `SITE.url` in `src/lib/site-config.ts` matches your domain
+
+### Calendly Integration
+
+Replace the placeholder in `src/app/book-strategy/page.tsx` with your Calendly embed iframe.
+
+## Scripts
+
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # ESLint
+```
+
+## License
+
+© 2026 HasBrando · Lifetop Academy
