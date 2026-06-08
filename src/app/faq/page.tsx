@@ -7,7 +7,7 @@ import { FAQS } from '@/lib/data/faqs';
 
 export const metadata = createMetadata({
   title: 'FAQ',
-  description: 'Frequently asked questions about HasBrando services, process, and engagement.',
+  description: 'Frequently asked questions about HasBrando engagements, process, and strategic partnerships.',
   path: '/faq',
 });
 
@@ -25,7 +25,7 @@ export default function FaqPage() {
       </section>
       <section className="section section--light">
         <div className="container max-w-3xl">
-          <SectionHeading title="Everything you need to know" subtitle="Can't find what you're looking for? We're happy to help." align="center" className="mx-auto text-center" />
+          <SectionHeading title="Everything you need to know" subtitle="Straightforward answers for brands considering a strategic partnership." align="center" className="mx-auto text-center" />
           <Reveal><Accordion items={FAQS} /></Reveal>
         </div>
       </section>

@@ -13,6 +13,8 @@ export type CaseStudy = {
   title: string;
   summary: string;
   challenge: string;
+  strategy: string;
+  execution: string;
   solution: string;
   results: string[];
   metrics: CaseStudyMetric[];
@@ -28,11 +30,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'coaching-brand-transformation',
     client: 'Elevate Coaching',
     industry: 'Coaching',
-    title: 'From invisible to fully booked in 90 days',
+    title: 'From invisible to in-demand in 90 days',
     summary:
       'A life coaching brand went from sporadic referrals to a consistent pipeline of premium clients through personal branding and funnel optimization.',
     challenge:
       'The client had strong expertise but no cohesive brand, inconsistent social presence, and relied entirely on word-of-mouth referrals.',
+    strategy:
+      'Reposition as a premium coaching authority with a distinct visual identity, content pillars, and a high-ticket offer architecture.',
+    execution:
+      'Launched a content system, built a discovery call funnel, and ran targeted Meta ads with UGC-style creative.',
     solution:
       'We rebuilt their personal brand identity, launched a content system, created a high-converting discovery call funnel, and ran targeted Meta ads.',
     results: [
@@ -64,6 +70,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       'A new D2C skincare brand needed a premium launch presence and performance marketing to hit aggressive first-quarter revenue targets.',
     challenge:
       'Zero brand awareness, no existing customer base, and a crowded premium skincare market with established competitors.',
+    strategy:
+      'Establish Lumière as a premium, science-backed skincare brand with a launch narrative built around UGC authenticity.',
+    execution:
+      'Full brand identity, influencer seeding, UGC ad creative, and a multi-channel launch funnel across Meta and Google.',
     solution:
       'Full brand identity, UGC-driven ad creative, influencer seeding, and a multi-channel launch funnel across Meta and Google.',
     results: [
@@ -90,6 +100,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       'A management consulting firm needed to move beyond cold outreach and establish premium authority in their niche.',
     challenge:
       'Generic positioning, weak LinkedIn presence, and a sales team dependent on outbound prospecting with low response rates.',
+    strategy:
+      'Shift from outbound-dependent to inbound-led growth through niche authority positioning and executive thought leadership.',
+    execution:
+      'LinkedIn content engine, case study development, lead magnet funnel, and sales enablement assets.',
     solution:
       'Strategic repositioning, LinkedIn content engine, case study development, and an inbound lead magnet funnel.',
     results: [
@@ -116,6 +130,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       'An early-stage SaaS startup needed rapid user acquisition and a premium brand presence for their seed round.',
     challenge:
       'Unpolished brand, no marketing infrastructure, and pressure to show traction before fundraising deadline.',
+    strategy:
+      'Position FlowStack as a premium, investor-ready SaaS with product-led growth and clear category messaging.',
+    execution:
+      'Brand refresh, conversion-optimized landing pages, content marketing, and performance campaigns on Google and LinkedIn.',
     solution:
       'Brand refresh, product-led landing pages, content marketing, and performance campaigns across Google and LinkedIn.',
     results: [

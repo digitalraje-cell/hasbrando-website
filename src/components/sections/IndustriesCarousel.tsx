@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import Reveal from '@/components/ui/Reveal';
 import { INDUSTRY_PERSONAS, type IndustryPersona } from '@/lib/data/industries-data';
 
-const SCROLL_SPEED = 0.045;
+const SCROLL_SPEED = 0.032;
 const RESUME_DELAY_MS = 2000;
 const NAV_DURATION_MS = 620;
 const CARD_GAP = 20;
@@ -22,7 +22,7 @@ function IndustryCard({ industry, priority }: { industry: IndustryPersona; prior
           src={industry.image}
           alt={`${industry.label} — professional`}
           fill
-          sizes="(max-width: 640px) 85vw, 380px"
+          sizes="(max-width: 640px) 85vw, 440px"
           priority={priority}
           className="industry-card__img"
         />
@@ -165,14 +165,14 @@ export default function IndustriesCarousel() {
   const duplicated = [...INDUSTRY_PERSONAS, ...INDUSTRY_PERSONAS];
 
   return (
-    <section className="section industries-section" id="industries">
+    <section className="industries-section" id="industries">
       <div className="container">
         <div className="industries-header">
           <Reveal>
-            <p className="section-label">Who We Serve</p>
-            <h2 className="section-title">Built for ambitious<br />leaders & brands</h2>
-            <p className="section-subtitle">
-              Premium branding and growth systems for businesses that refuse to compete on price.
+            <p className="section-label">Industries</p>
+            <h2 className="section-title">Built for leaders<br />who lead</h2>
+            <p className="section-subtitle prose-width-lg">
+              Premium positioning for founders, consultants and brands investing in long-term authority.
             </p>
           </Reveal>
           <div className="industries-nav hidden-mobile">

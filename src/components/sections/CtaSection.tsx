@@ -8,28 +8,36 @@ type CtaSectionProps = {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  showSecondary?: boolean;
 };
 
 export default function CtaSection({
-  title = 'Ready to build a brand that wins?',
-  subtitle = 'Book a strategy call. No pitch deck — just an honest conversation about your brand, your market, and what\'s possible.',
+  title = 'Ready to Build a Brand People Remember?',
+  subtitle = 'Let\'s discuss how HasBrando can position your brand for authority, trust and long-term growth.',
   primaryLabel = 'Book Strategy Call',
   primaryHref = '/book-strategy',
-  secondaryLabel = 'View Our Work',
-  secondaryHref = '/case-studies',
+  secondaryLabel = 'View Work',
+  secondaryHref = '/work',
+  showSecondary = false,
 }: CtaSectionProps) {
   return (
-    <section className="cta-dark">
-      <div className="container text-center">
-        <Reveal>
-          <h2 className="cta-dark__title">{title}</h2>
-          <p className="cta-dark__subtitle">{subtitle}</p>
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href={primaryHref} className="btn btn-on-dark btn-lg">{primaryLabel}</Link>
+    <section className="cta-dark section-full">
+      <Reveal className="cta-dark__inner">
+        <h2 className="cta-dark__title">
+          {title === 'Ready to Build a Brand People Remember?' ? (
+            <>Ready to Build a Brand<br />People Remember?</>
+          ) : (
+            title
+          )}
+        </h2>
+        <p className="cta-dark__subtitle">{subtitle}</p>
+        <div className={`cta-dark__actions ${showSecondary ? 'cta-dark__actions--dual' : ''}`}>
+          <Link href={primaryHref} className="btn btn-on-dark btn-lg">{primaryLabel}</Link>
+          {showSecondary && (
             <Link href={secondaryHref} className="btn btn-secondary-on-dark btn-lg">{secondaryLabel}</Link>
-          </div>
-        </Reveal>
-      </div>
+          )}
+        </div>
+      </Reveal>
     </section>
   );
 }

@@ -5,10 +5,8 @@ import { BLOG_POSTS } from '@/lib/data/blog';
 const STATIC_ROUTES = [
   '',
   '/about',
-  '/services',
   '/solutions',
-  '/case-studies',
-  '/portfolio',
+  '/work',
   '/contact',
   '/book-strategy',
   '/faq',

@@ -20,15 +20,15 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: `${SITE.name} — Premium Branding & Growth Agency`,
+  title: `${SITE.name} — Premium Branding Consultancy`,
   description: SITE.description,
   keywords: [
-    'branding agency',
-    'premium branding',
-    'creative growth agency',
+    'premium branding consultancy',
+    'brand positioning agency',
+    'luxury branding',
     'personal branding',
-    'performance marketing',
     'brand strategy',
+    'creative agency',
   ],
 });
 

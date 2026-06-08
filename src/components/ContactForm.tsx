@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import Select from '@/components/ui/Select';
-import { SERVICES } from '@/lib/data/services';
+import { GROWTH_SOLUTIONS } from '@/lib/data/growth-solutions';
 
 const REVENUE_OPTIONS = [
   'Under $10K/month',
@@ -13,7 +13,7 @@ const REVENUE_OPTIONS = [
   'Prefer not to say',
 ];
 
-const SERVICE_OPTIONS = SERVICES.map((s) => s.title);
+const SERVICE_OPTIONS = GROWTH_SOLUTIONS.map((s) => s.outcome);
 
 function LoadingSpinner() {
   return (
@@ -125,7 +125,7 @@ export default function ContactForm() {
             <input id="websiteUrl" name="websiteUrl" type="url" placeholder="https://yourcompany.com" />
           </div>
           <div className="form-field">
-            <label htmlFor="services-select">Services Interested In</label>
+            <label htmlFor="services-select">Solutions Interested In</label>
             <Select
               id="services-select"
               value={services}
@@ -159,7 +159,7 @@ export default function ContactForm() {
               name="challenge"
               type="text"
               required
-              placeholder="e.g. Inconsistent leads, weak brand presence, low ad ROAS"
+              placeholder="e.g. Weak positioning, invisible brand, inconsistent demand"
             />
           </div>
           <div className="form-field form-field-full">

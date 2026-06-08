@@ -7,16 +7,17 @@ import Reveal from '@/components/ui/Reveal';
 import { HERO_STATS, TRUST_LOGOS } from '@/lib/data/stats';
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=1500&q=85&auto=format&fit=crop';
+  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&h=2200&q=90&auto=format&fit=crop';
 
 export default function HeroSection() {
   return (
     <>
-      <section className="hero-dark min-h-[100svh] pt-[var(--header-h)]">
-        <div className="container relative grid items-center gap-20 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-32">
-          <div className="max-w-2xl">
+      <section className="hero-dark">
+        <div className="hero-grain" aria-hidden />
+        <div className="hero-inner">
+          <div className="hero-content">
             <Reveal>
-              <p className="hero-eyebrow">Premium Branding & Growth</p>
+              <p className="hero-eyebrow">Premium Branding Consultancy</p>
             </Reveal>
             <Reveal delay={0.06}>
               <h1 className="hero-headline">
@@ -27,16 +28,16 @@ export default function HeroSection() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="hero-subheadline">
-                We help ambitious founders and brands build market authority, premium positioning, and growth systems that command attention — and revenue.
+                We help founders, consultants and ambitious brands build authority, trust and scalable growth through premium branding and performance systems.
               </p>
             </Reveal>
             <Reveal delay={0.18}>
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="hero-actions">
                 <Link href="/book-strategy" className="btn btn-on-dark btn-lg">
                   Book Strategy Call
                 </Link>
-                <Link href="/case-studies" className="btn btn-secondary-on-dark btn-lg">
-                  View Our Work
+                <Link href="/work" className="btn btn-secondary-on-dark btn-lg">
+                  View Work
                 </Link>
               </div>
             </Reveal>
@@ -52,37 +53,32 @@ export default function HeroSection() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="relative hidden lg:block">
+          <Reveal delay={0.1} className="hero-visual-wrap hidden lg:block">
             <motion.div
               className="hero-visual"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, scale: 1.03 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Image
                 src={HERO_IMAGE}
-                alt="Premium creative workspace"
+                alt="Premium architectural interior"
                 fill
                 priority
-                sizes="(max-width: 1024px) 0vw, 45vw"
+                sizes="55vw"
                 className="hero-visual__img"
               />
               <div className="hero-visual__overlay" />
-              <div className="hero-visual__caption">
-                <p className="hero-visual__text">
-                  Authority. Growth.
-                  <br />
-                  Market Leadership.
-                </p>
-              </div>
             </motion.div>
           </Reveal>
         </div>
       </section>
 
-      <div className="trust-bar">
+      <div className="trust-bar section-full">
         <div className="container">
-          <p className="trust-bar__label">Trusted by ambitious brands worldwide</p>
+          <p className="trust-bar__label">
+            Trusted by ambitious founders, consultants and growth-focused brands
+          </p>
           <div className="trust-bar__logos">
             {TRUST_LOGOS.map((logo) => (
               <span key={logo} className="trust-logo">{logo}</span>

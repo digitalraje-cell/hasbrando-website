@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Wordmark size="lg" variant="light" />
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-[var(--text-on-dark-muted)]">
-              Premium branding and growth agency for ambitious founders, coaches, and brands ready to scale internationally.
+              Premium branding consultancy for ambitious founders and brands building international market authority.
             </p>
             <div className="mt-8 flex gap-3">
               {Object.entries(SITE.social).map(([platform, url]) => (
@@ -29,9 +29,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.12em] text-[var(--text-on-dark-subtle)]">Services</h3>
+            <h3 className="mb-5 text-xs font-medium uppercase tracking-[0.12em] text-[var(--text-on-dark-subtle)]">Solutions</h3>
             <ul className="space-y-3">
-              {FOOTER_LINKS.services.map((link) => (
+              {FOOTER_LINKS.solutions.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-[var(--text-on-dark-muted)] no-underline transition hover:text-white">
                     {link.label}

@@ -1,23 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Wordmark from '@/components/ui/Wordmark';
-import { NAV_LINKS } from '@/lib/site-config';
+import { NAV_LINKS, RESOURCE_LINKS } from '@/lib/site-config';
+
+function isActive(pathname: string, href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [overHero, setOverHero] = useState(true);
+  const resourcesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 20);
-      setOverHero(isHome && y < window.innerHeight * 0.75);
+      setScrolled(y > 16);
+      setOverHero(isHome && y < window.innerHeight * 0.7);
     };
 
     onScroll();
@@ -30,47 +37,92 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const isDark = isHome && overHero && !menuOpen && !scrolled;
-  const headerBg = menuOpen
-    ? 'bg-white border-b border-[var(--border)]'
-    : scrolled || !isDark
-      ? 'bg-white/95 backdrop-blur-xl border-b border-[var(--border)]'
-      : 'bg-transparent';
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setResourcesOpen(false);
+  };
 
-  const linkClass = isDark && !scrolled && !menuOpen
-    ? 'text-white/70 hover:text-white'
-    : 'text-[var(--text-muted)] hover:text-[var(--text)]';
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
+        setResourcesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const isTransparent = isHome && overHero && !menuOpen && !scrolled;
+  const headerState = menuOpen
+    ? 'header--solid'
+    : isTransparent
+      ? 'header--transparent'
+      : 'header--solid';
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
-      style={{ height: 'var(--header-h)' }}
-    >
-      <div className="container flex h-full items-center justify-between">
-        <Wordmark variant={isDark && !scrolled && !menuOpen ? 'light' : 'dark'} />
+    <header className={`site-header ${headerState}`}>
+      <div className="header-inner">
+        <div className="header-brand">
+          <Wordmark variant={isTransparent ? 'light' : 'dark'} />
+        </div>
 
-        <nav className="hidden items-center gap-10 lg:flex" aria-label="Main navigation">
+        <nav className="header-nav hidden lg:flex" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium no-underline transition ${linkClass}`}
+              className={`nav-link ${isActive(pathname, link.href) ? 'nav-link--active' : ''} ${isTransparent ? 'nav-link--on-dark' : ''}`}
+              onClick={closeMenus}
             >
               {link.label}
             </Link>
           ))}
+
+          <div className="relative" ref={resourcesRef}>
+            <button
+              type="button"
+              className={`nav-link nav-link--trigger ${resourcesOpen ? 'nav-link--active' : ''} ${isTransparent ? 'nav-link--on-dark' : ''}`}
+              onClick={() => setResourcesOpen(!resourcesOpen)}
+              aria-expanded={resourcesOpen}
+              aria-haspopup="true"
+            >
+              Resources
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden
+                className={`nav-link__chevron ${resourcesOpen ? 'nav-link__chevron--open' : ''}`}
+              >
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            {resourcesOpen && (
+              <div className="nav-dropdown" role="menu">
+                {RESOURCE_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="nav-dropdown__link"
+                    role="menuitem"
+                    onClick={closeMenus}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            href="/contact"
-            className={`text-sm font-medium no-underline transition ${linkClass}`}
-          >
-            Contact
-          </Link>
+        <div className="header-actions hidden lg:flex">
           <Link
             href="/book-strategy"
-            className={isDark && !scrolled ? 'btn btn-on-dark text-sm' : 'btn btn-primary text-sm'}
+            className={`header-cta ${isTransparent ? 'header-cta--on-dark' : ''}`}
+            onClick={closeMenus}
           >
             Book Strategy Call
           </Link>
@@ -78,16 +130,12 @@ export default function Header() {
 
         <button
           type="button"
-          className={`flex h-10 w-10 items-center justify-center rounded-full border lg:hidden ${
-            isDark && !scrolled && !menuOpen
-              ? 'border-white/20 text-white'
-              : 'border-[var(--border)] text-[var(--text)]'
-          }`}
+          className={`header-menu-btn lg:hidden ${isTransparent ? 'header-menu-btn--on-dark' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
             {menuOpen ? (
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
             ) : (
@@ -98,23 +146,34 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 top-[var(--header-h)] z-40 bg-white lg:hidden">
-          <nav className="container flex flex-col gap-1 py-8" aria-label="Mobile navigation">
+        <div className="header-mobile-panel lg:hidden">
+          <nav className="header-mobile-nav" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-xl px-4 py-4 text-lg font-medium text-[var(--text-muted)] no-underline transition hover:bg-[var(--bg-subtle)] hover:text-[var(--text)]"
-                onClick={() => setMenuOpen(false)}
+                className={`header-mobile-link ${isActive(pathname, link.href) ? 'header-mobile-link--active' : ''}`}
+                onClick={closeMenus}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-8 flex flex-col gap-3 border-t border-[var(--border)] pt-8">
-              <Link href="/contact" className="btn btn-secondary w-full" onClick={() => setMenuOpen(false)}>
-                Contact
+
+            <div className="header-mobile-divider" />
+            <p className="header-mobile-label">Resources</p>
+            {RESOURCE_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="header-mobile-sublink"
+                onClick={closeMenus}
+              >
+                {link.label}
               </Link>
-              <Link href="/book-strategy" className="btn btn-primary w-full" onClick={() => setMenuOpen(false)}>
+            ))}
+
+            <div className="header-mobile-cta">
+              <Link href="/book-strategy" className="btn btn-primary w-full" onClick={closeMenus}>
                 Book Strategy Call
               </Link>
             </div>

@@ -5,7 +5,7 @@ import { SITE } from '@/lib/site-config';
 
 export const metadata = createMetadata({
   title: 'Contact',
-  description: 'Get in touch with HasBrando. Tell us about your brand and growth ambitions.',
+  description: 'Get in touch with HasBrando. Tell us about your brand and market ambitions.',
   path: '/contact',
 });
 

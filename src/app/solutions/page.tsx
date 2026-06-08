@@ -1,13 +1,18 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { createMetadata } from '@/lib/seo';
 import Reveal from '@/components/ui/Reveal';
+import SectionHeading from '@/components/ui/SectionHeading';
 import CtaSection from '@/components/sections/CtaSection';
-import { SOLUTIONS } from '@/lib/data/solutions';
+import { BUSINESS_SEGMENTS } from '@/lib/data/business-segments';
+import { GROWTH_SOLUTIONS } from '@/lib/data/growth-solutions';
 
 export const metadata = createMetadata({
   title: 'Solutions',
-  description: 'Tailored branding and growth solutions for coaches, consultants, startups, D2C brands, and personal brands.',
+  description:
+    'Growth, branding, authority and customer acquisition solutions for founders, coaches, consultants, startups, D2C brands, and premium businesses.',
   path: '/solutions',
+  keywords: ['branding solutions', 'growth agency', 'customer acquisition', 'brand authority'],
 });
 
 export default function SolutionsPage() {
@@ -17,51 +22,106 @@ export default function SolutionsPage() {
         <div className="container">
           <Reveal>
             <p className="section-label">Solutions</p>
-            <h1 className="page-hero__title">Built for your business</h1>
+            <h1 className="page-hero__title">Solutions Built for Growth</h1>
             <p className="page-hero__desc">
-              Every engagement is tailored to your industry, audience, and ambitions — not adapted from a template.
+              Branding, authority, and acquisition systems for brands building lasting trust and market position.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section section--light">
-        <div className="container space-y-0">
-          {SOLUTIONS.map((solution, i) => (
-            <Reveal key={solution.id}>
-              <article id={solution.id} className="scroll-mt-28 border-b border-[var(--border)] py-20 first:pt-0 last:border-b-0">
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-                  <div>
-                    <p className="section-label">{String(i + 1).padStart(2, '0')}</p>
-                    <h2 className="font-display text-[clamp(2rem,4vw,2.75rem)] leading-tight tracking-tight">{solution.title}</h2>
-                    <p className="mt-3 text-lg text-[var(--text-muted)]">{solution.subtitle}</p>
-                    <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">{solution.description}</p>
-                    <Link href="/contact" className="btn btn-primary mt-10">Discuss Your Goals</Link>
+      <section className="section section--subtle" id="by-business">
+        <div className="container">
+          <SectionHeading
+            label="By Business Type"
+            title="Built for leaders who refuse to compete on price"
+            subtitle="Every engagement starts with your market, your audience, and the outcomes that matter most to your business."
+          />
+        </div>
+
+        <div className="segment-grid">
+          {BUSINESS_SEGMENTS.map((segment, i) => (
+            <Reveal key={segment.id} delay={i * 0.04}>
+              <article className="segment-card" id={segment.id}>
+                <div className="segment-card__visual">
+                  <Image
+                    src={segment.image}
+                    alt={segment.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="segment-card__img"
+                  />
+                  <div className="segment-card__overlay" />
+                </div>
+                <div className="segment-card__body">
+                  <p className="segment-card__tagline">{segment.tagline}</p>
+                  <h3 className="segment-card__title">{segment.title}</h3>
+
+                  <div className="segment-card__sections">
+                    <div>
+                      <p className="segment-card__label">Biggest Challenge</p>
+                      <p className="segment-card__text">{segment.challenge}</p>
+                    </div>
+                    <div>
+                      <p className="segment-card__label">Our Approach</p>
+                      <p className="segment-card__text">{segment.help}</p>
+                    </div>
+                    <div>
+                      <p className="segment-card__label">Outcomes</p>
+                      <ul className="segment-card__outcomes">
+                        {segment.outcomes.map((o) => (
+                          <li key={o}>{o}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div className="space-y-10">
-                    <div>
-                      <p className="service-detail__panel-title">Common Challenges</p>
-                      <ul className="service-detail__list mt-4">
-                        {solution.challenges.map((c) => <li key={c}>{c}</li>)}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="service-detail__panel-title">Our Approach</p>
-                      <ul className="service-detail__list mt-4">
-                        {solution.approach.map((a) => <li key={a}>{a}</li>)}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="service-detail__panel-title">Expected Outcomes</p>
-                      <ul className="service-detail__list mt-4">
-                        {solution.outcomes.map((o) => <li key={o}>{o}</li>)}
-                      </ul>
-                    </div>
-                  </div>
+
+                  <Link href="/contact" className="segment-card__cta">
+                    Discuss Your Goals →
+                  </Link>
                 </div>
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="section section--light" id="growth-solutions">
+        <div className="container">
+          <SectionHeading
+            label="Growth Solutions"
+            title="Strategic capabilities, outcome-driven"
+            subtitle="We don't sell services — we solve positioning and demand problems. Every capability is framed around what it delivers for your market."
+            align="center"
+            className="mx-auto text-center"
+          />
+
+          <div className="services-grid">
+            {GROWTH_SOLUTIONS.map((solution, i) => (
+              <Reveal key={solution.id} delay={i * 0.03}>
+                <article id={solution.id} className="service-row">
+                  <span className="service-row__index">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="service-row__outcome">{solution.outcome}</h3>
+                  <div className="service-row__meta">
+                    <p className="service-row__title">{solution.title}</p>
+                    <p>{solution.description}</p>
+                    <div className="growth-solution__focus">
+                      {solution.focus.map((f) => (
+                        <span key={f} className="growth-solution__tag">{f}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link href="/contact" className="service-row__arrow" aria-label={`Discuss ${solution.outcome}`}>
+                    →
+                  </Link>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-20 text-center">
+            <Link href="/book-strategy" className="btn btn-primary">Book Strategy Call</Link>
+          </Reveal>
         </div>
       </section>
 

@@ -4,7 +4,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = createMetadata({
   title: 'Book Strategy Call',
-  description: 'Book a strategy call with HasBrando. Discuss your brand, positioning, and growth opportunities.',
+  description: 'Book a strategy call with HasBrando. Discuss your brand, positioning, and market opportunities.',
   path: '/book-strategy',
 });
 

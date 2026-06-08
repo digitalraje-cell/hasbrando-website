@@ -25,7 +25,7 @@ export default function BlogPage() {
       <section className="section section--light">
         <div className="container">
           <SectionHeading title="Latest articles" subtitle="Perspectives from our strategists." />
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="content-grid-3">
             {BLOG_POSTS.map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.05}>
                 <Link href={`/blog/${post.slug}`} className="blog-card">

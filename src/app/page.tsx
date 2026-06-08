@@ -7,7 +7,7 @@ import IndustriesCarousel from '@/components/sections/IndustriesCarousel';
 import CaseStudyCard from '@/components/sections/CaseStudyCard';
 import CtaSection from '@/components/sections/CtaSection';
 import Accordion from '@/components/ui/Accordion';
-import { HOME_SERVICES } from '@/lib/data/home-services';
+import { GROWTH_SOLUTIONS } from '@/lib/data/growth-solutions';
 import { CASE_STUDIES } from '@/lib/data/case-studies';
 import { FAQS } from '@/lib/data/faqs';
 import { WHY_US, PROCESS_STEPS, TESTIMONIALS } from '@/lib/data/stats';
@@ -22,16 +22,16 @@ export default function HomePage() {
       <section className="section section--light">
         <div className="container">
           <SectionHeading
-            label="Capabilities"
-            title="What we build for ambitious brands"
-            subtitle="Every engagement is outcome-driven — designed to elevate your market position and accelerate growth."
+            label="Solutions"
+            title="Authority Creates Demand"
+            subtitle="Strategic capabilities for brands that refuse to blend in — positioning, creative, and acquisition as one cohesive system."
             align="center"
             className="mx-auto text-center"
           />
           <div className="services-grid">
-            {HOME_SERVICES.map((service, i) => (
+            {GROWTH_SOLUTIONS.slice(0, 8).map((service, i) => (
               <Reveal key={service.id} delay={i * 0.03}>
-                <Link href={`/services#${service.id}`} className="service-row">
+                <Link href={`/solutions#${service.id}`} className="service-row">
                   <span className="service-row__index">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="service-row__outcome">{service.outcome}</h3>
                   <div className="service-row__meta">
@@ -44,16 +44,16 @@ export default function HomePage() {
             ))}
           </div>
           <Reveal className="mt-20 text-center">
-            <Link href="/services" className="btn btn-secondary">Explore All Services</Link>
+            <Link href="/solutions" className="btn btn-secondary">Explore Solutions</Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="section section--light">
+      <section className="section section--subtle">
         <div className="container">
           <SectionHeading
             label="Why HasBrando"
-            title="Your growth partner, not another vendor"
+            title="A consultancy, not a vendor"
             subtitle="We take on fewer clients to deliver the strategic depth and creative excellence your brand deserves."
           />
           <div className="why-grid">
@@ -75,13 +75,13 @@ export default function HomePage() {
       <section className="section section--light">
         <div className="container">
           <SectionHeading
-            label="Selected Work"
-            title="Transformations we're proud of"
-            subtitle="Real outcomes from real partnerships — measured in revenue, authority, and market position."
+            label="Featured Work"
+            title="Premium Brands Win Attention"
+            subtitle="Selected partnerships where positioning, creative and systems changed how the market responds."
             align="center"
             className="mx-auto text-center"
           />
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="cases-grid">
             {featuredCases.map((study, i) => (
               <Reveal key={study.id} delay={i * 0.1}>
                 <CaseStudyCard study={study} featured />
@@ -89,7 +89,7 @@ export default function HomePage() {
             ))}
           </div>
           <Reveal className="mt-20 text-center">
-            <Link href="/case-studies" className="btn btn-secondary">View All Case Studies</Link>
+            <Link href="/work" className="btn btn-secondary">View All Work</Link>
           </Reveal>
         </div>
       </section>
@@ -98,8 +98,8 @@ export default function HomePage() {
         <div className="container">
           <SectionHeading
             label="Process"
-            title="How we partner with you"
-            subtitle="A deliberate framework that transforms brand strategy into measurable market growth."
+            title="How we partner"
+            subtitle="A deliberate framework — from discovery to sustained market presence."
             align="center"
             className="mx-auto text-center"
           />
@@ -122,10 +122,11 @@ export default function HomePage() {
           <SectionHeading
             label="Client Stories"
             title="Leaders who chose excellence"
+            subtitle="Founders and brands who invested in positioning — and never looked back."
             align="center"
             className="mx-auto text-center"
           />
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="testimonials-grid">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.author} delay={i * 0.1}>
                 <blockquote className="testimonial-card">
@@ -145,15 +146,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--light">
-        <div className="container max-w-3xl">
-          <SectionHeading label="FAQ" title="Questions, answered" align="center" className="mx-auto text-center" />
-          <Reveal><Accordion items={FAQS.slice(0, 5)} /></Reveal>
-          <Reveal className="mt-12 text-center">
-            <Link href="/faq" className="text-sm font-medium text-[var(--text-muted)] no-underline hover:text-[var(--text)]">
-              View all questions →
-            </Link>
-          </Reveal>
+      <section className="section section--subtle">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <SectionHeading
+              label="FAQ"
+              title="Questions, answered"
+              subtitle="Straightforward answers for brands considering a strategic partnership."
+              align="center"
+              className="mx-auto text-center"
+            />
+            <Reveal><Accordion items={FAQS.slice(0, 5)} /></Reveal>
+            <Reveal className="mt-12 text-center">
+              <Link href="/faq" className="text-sm font-medium text-[var(--text-muted)] no-underline hover:text-[var(--text)]">
+                View all questions →
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 

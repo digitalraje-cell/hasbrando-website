@@ -16,7 +16,7 @@ export default function CaseStudyCard({ study, featured }: Props) {
             src={study.image}
             alt={study.client}
             fill
-            sizes="(max-width: 1024px) 100vw, 33vw"
+            sizes={featured ? '(max-width: 1024px) 100vw, 33vw' : '(max-width: 1024px) 100vw, 50vw'}
             className="case-card__img"
           />
           <div className="case-card__visual-overlay" />
@@ -69,7 +69,7 @@ export default function CaseStudyCard({ study, featured }: Props) {
 
   if (featured) {
     return (
-      <Link href="/case-studies" className="case-card">
+      <Link href="/work" className="case-card">
         {content}
       </Link>
     );

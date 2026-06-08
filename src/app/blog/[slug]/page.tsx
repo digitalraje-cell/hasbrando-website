@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="section section--light">
         <div className="container max-w-3xl legal-content">
           <p className="text-lg">{post.excerpt}</p>
-          <p className="mt-6">Full article coming soon. Explore our <Link href="/services" className="text-[var(--text)] underline-offset-4 hover:underline">services</Link> or <Link href="/book-strategy" className="text-[var(--text)] underline-offset-4 hover:underline">book a strategy call</Link>.</p>
+          <p className="mt-6">Full article coming soon. Explore our <Link href="/solutions" className="text-[var(--text)] underline-offset-4 hover:underline">solutions</Link> or <Link href="/book-strategy" className="text-[var(--text)] underline-offset-4 hover:underline">book a strategy call</Link>.</p>
         </div>
       </section>
     </article>

@@ -6,7 +6,7 @@ import { PROCESS_STEPS, WHY_US } from '@/lib/data/stats';
 
 export const metadata = createMetadata({
   title: 'About Us',
-  description: 'Learn about HasBrando — a premium branding and growth agency for ambitious founders and brands.',
+  description: 'Learn about HasBrando — a premium branding consultancy for ambitious founders and brands building market authority.',
   path: '/about',
 });
 
@@ -17,9 +17,9 @@ export default function AboutPage() {
         <div className="container">
           <Reveal>
             <p className="section-label">About</p>
-            <h1 className="page-hero__title">We build brands that win</h1>
+            <h1 className="page-hero__title">We build brands that lead</h1>
             <p className="page-hero__desc">
-              HasBrando is a premium branding and growth agency for founders, coaches, and brands who refuse to compete on price.
+              HasBrando is a premium branding consultancy for founders and brands who refuse to compete on price.
             </p>
           </Reveal>
         </div>
@@ -33,7 +33,7 @@ export default function AboutPage() {
               Set the standard for premium agency work
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              To become the most trusted branding and growth partner for ambitious businesses worldwide — where creative excellence and strategic rigor are never compromised.
+              To set the international standard for premium branding consultancy — where creative excellence and strategic rigor are never compromised.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -42,7 +42,7 @@ export default function AboutPage() {
               Make every client the leader in their market
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              To help every brand we serve build such compelling positioning and such effective growth systems that they become the undeniable choice in their category.
+              To make every brand we serve the undeniable choice in their category — through positioning, creative, and acquisition systems worthy of their ambition.
             </p>
           </Reveal>
         </div>
@@ -70,13 +70,13 @@ export default function AboutPage() {
           <Reveal>
             <p className="section-label">Origin</p>
             <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
-              Great brands deserve great growth
+              Great brands deserve great positioning
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              HasBrando was founded on a conviction: too many talented businesses remain invisible — not from lack of expertise, but from lack of brand and growth systems worthy of their ambition.
+              HasBrando was founded on a conviction: too many exceptional brands remain invisible — not from lack of expertise, but from lack of positioning and creative systems worthy of their ambition.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              We built an agency that combines the creative excellence of a world-class studio with the strategic depth of a premium consulting firm. Today, we partner with clients across 32 countries.
+              We built a consultancy that combines the creative excellence of a world-class studio with the strategic depth of a premium advisory firm. Today, we partner with brands across 32 countries.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               Small team. Outsized impact.
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              You work directly with the strategists, designers, and growth leaders doing the work — not account managers reading scripts.
+              You work directly with the strategists and creatives doing the work — not account managers reading scripts.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-muted)]">
               We take on fewer clients so we can go deeper. Craftsmanship, transparency, and outcomes define everything we do.
