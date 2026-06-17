@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { createMetadata } from '@/lib/seo';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Reveal from '@/components/ui/Reveal';
+import PageHero from '@/components/sections/PageHero';
 import { BLOG_POSTS } from '@/lib/data/blog';
 
 export const metadata = createMetadata({
-  title: 'Blog',
+  title: 'Insights',
   description: 'Insights on branding, growth strategy, and market positioning from the HasBrando team.',
   path: '/blog',
 });
@@ -13,15 +14,12 @@ export const metadata = createMetadata({
 export default function BlogPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">Journal</p>
-            <h1 className="page-hero__title">Insights on brand & growth</h1>
-            <p className="page-hero__desc">Strategy, positioning, and growth thinking for ambitious leaders.</p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="Journal"
+        title="Insights on Branding, Authority & Growth"
+        description="Strategy, positioning, and market thinking for ambitious leaders."
+        image={null}
+      />
       <section className="section section--light">
         <div className="container">
           <SectionHeading title="Latest articles" subtitle="Perspectives from our strategists." />

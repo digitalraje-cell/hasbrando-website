@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
-  <text x="0" y="30" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#F5F5F5">Has</text>
-  <text x="52" y="30" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="url(#grad)">Brando</text>
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6"/>
-      <stop offset="50%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#D4AF37"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <text
+    x="0"
+    y="36"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="32"
+    font-weight="400"
+    fill="#0A0A0A"
+    letter-spacing="-1"
+  >HasBrando</text>
 </svg>

@@ -7,6 +7,7 @@ const STATIC_ROUTES = [
   '/about',
   '/solutions',
   '/work',
+  '/pricing',
   '/contact',
   '/book-strategy',
   '/faq',

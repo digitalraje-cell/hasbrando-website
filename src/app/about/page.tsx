@@ -1,11 +1,13 @@
 import { createMetadata } from '@/lib/seo';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Reveal from '@/components/ui/Reveal';
+import PageHero from '@/components/sections/PageHero';
+import FounderProfile from '@/components/sections/FounderProfile';
 import CtaSection from '@/components/sections/CtaSection';
 import { PROCESS_STEPS, WHY_US } from '@/lib/data/stats';
 
 export const metadata = createMetadata({
-  title: 'About Us',
+  title: 'About',
   description: 'Learn about HasBrando — a premium branding consultancy for ambitious founders and brands building market authority.',
   path: '/about',
 });
@@ -13,17 +15,12 @@ export const metadata = createMetadata({
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">About</p>
-            <h1 className="page-hero__title">We build brands that lead</h1>
-            <p className="page-hero__desc">
-              HasBrando is a premium branding consultancy for founders and brands who refuse to compete on price.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="About"
+        title="The Thinking Behind HasBrando"
+        description="A premium branding consultancy for founders and brands who refuse to compete on price."
+        image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=1800&q=90&auto=format&fit=crop"
+      />
 
       <section className="section section--light">
         <div className="container grid gap-20 lg:grid-cols-2">
@@ -47,6 +44,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <FounderProfile />
 
       <section className="section section--subtle">
         <div className="container">

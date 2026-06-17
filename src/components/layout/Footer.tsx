@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Wordmark from '@/components/ui/Wordmark';
+import SocialLinks from '@/components/ui/SocialLinks';
 import { FOOTER_LINKS, SITE } from '@/lib/site-config';
 
 export default function Footer() {
@@ -12,20 +13,7 @@ export default function Footer() {
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-[var(--text-on-dark-muted)]">
               Premium branding consultancy for ambitious founders and brands building international market authority.
             </p>
-            <div className="mt-8 flex gap-3">
-              {Object.entries(SITE.social).map(([platform, url]) => (
-                <a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-dark)] text-[var(--text-on-dark-muted)] transition hover:border-[var(--border-dark-hover)] hover:text-white"
-                  aria-label={platform}
-                >
-                  <span className="text-[10px] font-semibold uppercase">{platform[0]}</span>
-                </a>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
 
           <div>

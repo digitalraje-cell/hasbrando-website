@@ -22,6 +22,8 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = createMetadata({
   title: `${SITE.name} — Premium Branding Consultancy`,
   description: SITE.description,
+  path: '/',
+  isHome: true,
   keywords: [
     'premium branding consultancy',
     'brand positioning agency',

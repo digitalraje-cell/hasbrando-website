@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createMetadata } from '@/lib/seo';
+import PageHero from '@/components/sections/PageHero';
 import { BLOG_POSTS } from '@/lib/data/blog';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,24 +22,31 @@ export default async function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
   return (
     <article>
-      <section className="page-hero">
-        <div className="container max-w-3xl">
-          <Link href="/blog" className="text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text)]">← Journal</Link>
-          <p className="section-label mt-8">{post.category}</p>
-          <h1 className="page-hero__title">{post.title}</h1>
-          <div className="mt-6 flex items-center gap-3 text-sm text-[var(--text-subtle)]">
-            <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
-            <span>·</span>
-            <span>{post.readTime}</span>
-          </div>
+      <PageHero label={post.category} title={post.title} image={null}>
+        <Link href="/blog" className="hero-breadcrumb">← Journal</Link>
+        <div className="hero-post-meta">
+          <time dateTime={post.date}>{formattedDate}</time>
+          <span aria-hidden>·</span>
+          <span>{post.readTime}</span>
         </div>
-      </section>
+      </PageHero>
       <section className="section section--light">
         <div className="container max-w-3xl legal-content">
           <p className="text-lg">{post.excerpt}</p>
-          <p className="mt-6">Full article coming soon. Explore our <Link href="/solutions" className="text-[var(--text)] underline-offset-4 hover:underline">solutions</Link> or <Link href="/book-strategy" className="text-[var(--text)] underline-offset-4 hover:underline">book a strategy call</Link>.</p>
+          <p className="mt-6">
+            Full article coming soon. Explore our{' '}
+            <Link href="/solutions" className="text-[var(--text)] underline-offset-4 hover:underline">solutions</Link>
+            {' '}or{' '}
+            <Link href="/book-strategy" className="text-[var(--text)] underline-offset-4 hover:underline">book a strategy call</Link>.
+          </p>
         </div>
       </section>
     </article>

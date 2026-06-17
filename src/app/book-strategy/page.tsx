@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { createMetadata } from '@/lib/seo';
 import Reveal from '@/components/ui/Reveal';
+import PageHero from '@/components/sections/PageHero';
 
 export const metadata = createMetadata({
   title: 'Book Strategy Call',
@@ -11,17 +12,12 @@ export const metadata = createMetadata({
 export default function BookStrategyPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">Strategy Call</p>
-            <h1 className="page-hero__title">Book your strategy call</h1>
-            <p className="page-hero__desc">
-              30 minutes with a senior strategist. Honest conversation about your brand and growth — no pitch deck required.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="Strategy Call"
+        title="Your Next Growth Conversation Starts Here"
+        description="30 minutes with a senior strategist. Honest conversation about your brand and positioning — no pitch deck required."
+        image={null}
+      />
 
       <section className="section section--light">
         <div className="container grid gap-20 lg:grid-cols-5">

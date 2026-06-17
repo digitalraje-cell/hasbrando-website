@@ -13,7 +13,7 @@ const sizes = {
 };
 
 export default function Wordmark({ className = '', size = 'md', variant = 'dark' }: WordmarkProps) {
-  const color = variant === 'light' ? 'text-white' : 'text-[var(--text)]';
+  const color = variant === 'light' ? 'text-[var(--nav-link-active-on-dark)]' : 'text-[var(--nav-link-active)]';
 
   return (
     <Link

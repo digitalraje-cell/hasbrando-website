@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Wordmark from '@/components/ui/Wordmark';
 import { NAV_LINKS, RESOURCE_LINKS } from '@/lib/site-config';
+import { hasDarkHero } from '@/lib/dark-hero-paths';
 
 function isActive(pathname: string, href: string) {
   if (href === '/') return pathname === '/';
@@ -12,25 +13,61 @@ function isActive(pathname: string, href: string) {
 }
 
 export default function Header() {
+  const pathname = usePathname();
+  const pageHasDarkHero = hasDarkHero(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [overHero, setOverHero] = useState(true);
+  const [headerMode, setHeaderMode] = useState<'transparent' | 'on-dark' | 'solid'>(() =>
+    pageHasDarkHero ? 'transparent' : 'solid',
+  );
   const resourcesRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-  const isHome = pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+
+    const update = () => {
+      if (menuOpen) {
+        setHeaderMode('solid');
+        ticking = false;
+        return;
+      }
+
+      if (!pageHasDarkHero) {
+        setHeaderMode('solid');
+        ticking = false;
+        return;
+      }
+
       const y = window.scrollY;
-      setScrolled(y > 16);
-      setOverHero(isHome && y < window.innerHeight * 0.7);
+      const threshold = pathname === '/'
+        ? window.innerHeight * 0.65
+        : Math.min(window.innerHeight * 0.5, 480);
+
+      if (y >= threshold) {
+        setHeaderMode('solid');
+      } else if (y > 12) {
+        setHeaderMode('on-dark');
+      } else {
+        setHeaderMode('transparent');
+      }
+      ticking = false;
     };
 
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [isHome]);
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [pathname, pageHasDarkHero, menuOpen]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -52,26 +89,21 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isTransparent = isHome && overHero && !menuOpen && !scrolled;
-  const headerState = menuOpen
-    ? 'header--solid'
-    : isTransparent
-      ? 'header--transparent'
-      : 'header--solid';
+  const isOnDarkHero = headerMode === 'transparent' || headerMode === 'on-dark';
 
   return (
-    <header className={`site-header ${headerState}`}>
+    <header className={`site-header site-header--${headerMode}`}>
       <div className="header-inner">
         <div className="header-brand">
-          <Wordmark variant={isTransparent ? 'light' : 'dark'} />
+          <Wordmark variant={isOnDarkHero ? 'light' : 'dark'} />
         </div>
 
-        <nav className="header-nav hidden lg:flex" aria-label="Main navigation">
+        <nav className="header-nav" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`nav-link ${isActive(pathname, link.href) ? 'nav-link--active' : ''} ${isTransparent ? 'nav-link--on-dark' : ''}`}
+              className={`nav-link ${isActive(pathname, link.href) ? 'nav-link--active' : ''} ${isOnDarkHero ? 'nav-link--on-dark' : ''}`}
               onClick={closeMenus}
             >
               {link.label}
@@ -81,7 +113,7 @@ export default function Header() {
           <div className="relative" ref={resourcesRef}>
             <button
               type="button"
-              className={`nav-link nav-link--trigger ${resourcesOpen ? 'nav-link--active' : ''} ${isTransparent ? 'nav-link--on-dark' : ''}`}
+              className={`nav-link nav-link--trigger ${resourcesOpen ? 'nav-link--active' : ''} ${isOnDarkHero ? 'nav-link--on-dark' : ''}`}
               onClick={() => setResourcesOpen(!resourcesOpen)}
               aria-expanded={resourcesOpen}
               aria-haspopup="true"
@@ -118,10 +150,10 @@ export default function Header() {
           </div>
         </nav>
 
-        <div className="header-actions hidden lg:flex">
+        <div className="header-actions">
           <Link
             href="/book-strategy"
-            className={`header-cta ${isTransparent ? 'header-cta--on-dark' : ''}`}
+            className={`header-cta ${isOnDarkHero ? 'header-cta--on-dark' : ''}`}
             onClick={closeMenus}
           >
             Book Strategy Call
@@ -130,7 +162,7 @@ export default function Header() {
 
         <button
           type="button"
-          className={`header-menu-btn lg:hidden ${isTransparent ? 'header-menu-btn--on-dark' : ''}`}
+          className={`header-menu-btn ${isOnDarkHero ? 'header-menu-btn--on-dark' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
@@ -146,7 +178,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="header-mobile-panel lg:hidden">
+        <div className="header-mobile-panel">
           <nav className="header-mobile-nav" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
               <Link

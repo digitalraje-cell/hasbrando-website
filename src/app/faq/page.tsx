@@ -1,6 +1,6 @@
 import { createMetadata, faqJsonLd } from '@/lib/seo';
-import SectionHeading from '@/components/ui/SectionHeading';
 import Reveal from '@/components/ui/Reveal';
+import PageHero from '@/components/sections/PageHero';
 import Accordion from '@/components/ui/Accordion';
 import CtaSection from '@/components/sections/CtaSection';
 import { FAQS } from '@/lib/data/faqs';
@@ -15,17 +15,14 @@ export default function FaqPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQS)) }} />
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">FAQ</p>
-            <h1 className="page-hero__title">Questions, answered</h1>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="FAQ"
+        title="Questions Worth Asking"
+        description="Straightforward answers for brands considering a strategic partnership."
+        image={null}
+      />
       <section className="section section--light">
         <div className="container max-w-3xl">
-          <SectionHeading title="Everything you need to know" subtitle="Straightforward answers for brands considering a strategic partnership." align="center" className="mx-auto text-center" />
           <Reveal><Accordion items={FAQS} /></Reveal>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { createMetadata } from '@/lib/seo';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHero from '@/components/sections/PageHero';
 import CtaSection from '@/components/sections/CtaSection';
 import WorkCaseStudy from '@/components/sections/WorkCaseStudy';
 import PortfolioGrid from '@/components/sections/PortfolioGrid';
@@ -17,17 +18,12 @@ export const metadata = createMetadata({
 export default function WorkPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">Work</p>
-            <h1 className="page-hero__title">Work That Builds Brands</h1>
-            <p className="page-hero__desc">
-              Transformations in positioning, creative and market perception — told with clarity, not hype.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="Work"
+        title="Work That Builds Brands"
+        description="Transformations in positioning, creative and market perception — told with clarity, not hype."
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=1800&q=90&auto=format&fit=crop"
+      />
 
       <section className="section section--light" id="case-studies">
         <div className="container">

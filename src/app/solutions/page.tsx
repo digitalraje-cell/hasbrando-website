@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { createMetadata } from '@/lib/seo';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHero from '@/components/sections/PageHero';
 import CtaSection from '@/components/sections/CtaSection';
 import { BUSINESS_SEGMENTS } from '@/lib/data/business-segments';
 import { GROWTH_SOLUTIONS } from '@/lib/data/growth-solutions';
@@ -18,17 +19,11 @@ export const metadata = createMetadata({
 export default function SolutionsPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal>
-            <p className="section-label">Solutions</p>
-            <h1 className="page-hero__title">Solutions Built for Growth</h1>
-            <p className="page-hero__desc">
-              Branding, authority, and acquisition systems for brands building lasting trust and market position.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        label="Solutions"
+        title="Solutions Built for Authority & Growth"
+        description="Branding, authority, and acquisition systems for brands building lasting trust and market position."
+      />
 
       <section className="section section--subtle" id="by-business">
         <div className="container">
