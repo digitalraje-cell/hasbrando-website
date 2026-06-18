@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Reveal from '@/components/ui/Reveal';
 import type { LegalDocument as LegalDocumentData } from '@/lib/data/legal-types';
+import { SITE } from '@/lib/site-config';
 
 type LegalDocumentProps = {
   document: LegalDocumentData;
@@ -52,7 +53,7 @@ export default function LegalDocument({ document }: LegalDocumentProps) {
           <div className="legal-footer-note">
             <p>
               Questions about this document? Contact us at{' '}
-              <Link href="mailto:support@hasbrando.com">support@hasbrando.com</Link>.
+              <Link href={`mailto:${SITE.email}`}>{SITE.email}</Link>.
             </p>
           </div>
         </Reveal>

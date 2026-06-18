@@ -29,8 +29,8 @@ Copy `.env.example` to `.env.local` and configure:
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `RESEND_API_KEY` | Yes | Resend API key for contact form emails |
-| `RESEND_FROM_EMAIL` | No | Verified sender on hasbrando.com (default: `HasBrando <support@hasbrando.com>`) |
-| `CONTACT_TO_EMAIL` | No | Lead notification inbox (default: support@hasbrando.com) |
+| `RESEND_FROM_EMAIL` | No | Verified sender on hashbrando.com (default: `HasBrando <support@hashbrando.com>`) |
+| `CONTACT_TO_EMAIL` | No | Lead notification inbox (default: support@hashbrando.com) |
 | `CONTACT_RATE_LIMIT_DISABLED` | No | Set `true` for local dev |
 | `GOOGLE_SHEETS_SPREADSHEET_ID` | Optional | Google Sheet ID for lead storage |
 | `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Optional | GCP service account email |

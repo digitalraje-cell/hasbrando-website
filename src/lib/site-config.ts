@@ -4,7 +4,7 @@ export const SITE = {
   description:
     'HasBrando is a premium branding consultancy helping founders and consultants build authority, trust and market positioning through strategic creative and performance systems.',
   url: 'https://hasbrando.com',
-  email: 'support@hasbrando.com',
+  email: 'support@hashbrando.com',
   phone: '+91 91157 21519',
   phoneTel: '+919115721519',
   whatsapp: 'https://wa.me/919115721519',

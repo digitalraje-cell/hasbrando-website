@@ -103,7 +103,7 @@ export async function POST(request: Request) {
 
     if (leadResult.error) {
       return jsonError(
-        'Unable to send your message. Please try again or email support@hasbrando.com.',
+        'Unable to send your message. Please try again or email support@hashbrando.com.',
         502,
       );
     }

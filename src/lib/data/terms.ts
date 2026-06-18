@@ -206,7 +206,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'Either party may end an ongoing retainer engagement with 30 days written notice to support@hasbrando.com, unless a different notice period is specified in your agreement.',
+          text: 'Either party may end an ongoing retainer engagement with 30 days written notice to support@hashbrando.com, unless a different notice period is specified in your agreement.',
         },
         {
           type: 'p',
@@ -397,7 +397,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         {
           type: 'ul',
           items: [
-            'Email: support@hasbrando.com',
+            'Email: support@hashbrando.com',
             'Business: HasBrando — Premium Branding Consultancy',
             'Operated within the Lifetop Academy ecosystem',
             'Address: L2 B/68, Mohan Garden, Uttam Nagar, New Delhi 110059, India',

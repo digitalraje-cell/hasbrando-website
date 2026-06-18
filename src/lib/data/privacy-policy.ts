@@ -276,7 +276,7 @@ export const PRIVACY_POLICY: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'To exercise these rights, contact us at support@hasbrando.com. We will respond within a reasonable timeframe and in accordance with applicable law.',
+          text: 'To exercise these rights, contact us at support@hashbrando.com. We will respond within a reasonable timeframe and in accordance with applicable law.',
         },
       ],
     },
@@ -347,7 +347,7 @@ export const PRIVACY_POLICY: LegalDocument = {
         {
           type: 'ul',
           items: [
-            'Email: support@hasbrando.com',
+            'Email: support@hashbrando.com',
             'Business: HasBrando — Premium Branding Consultancy',
             'Operated within the Lifetop Academy ecosystem',
             'Address: L2 B/68, Mohan Garden, Uttam Nagar, New Delhi 110059, India',

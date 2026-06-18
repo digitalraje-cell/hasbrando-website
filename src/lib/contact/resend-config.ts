@@ -1,13 +1,13 @@
 import { Resend } from 'resend';
 
 /** Verified sending domain in Resend — all outbound mail must use this domain. */
-export const VERIFIED_EMAIL_DOMAIN = 'hasbrando.com';
+export const VERIFIED_EMAIL_DOMAIN = 'hashbrando.com';
 
-export const DEFAULT_FROM_ADDRESS = 'support@hasbrando.com';
+export const DEFAULT_FROM_ADDRESS = 'support@hashbrando.com';
 export const DEFAULT_FROM_EMAIL = `HasBrando <${DEFAULT_FROM_ADDRESS}>`;
 export const DEFAULT_CONTACT_TO_EMAIL = DEFAULT_FROM_ADDRESS;
 
-const BLOCKED_SENDER_PATTERNS = ['onboarding@resend.dev', '@resend.dev'];
+const BLOCKED_SENDER_PATTERNS = ['onboarding@resend.dev', '@resend.dev', '@hasbrando.com'];
 
 function extractEmailAddress(from: string): string {
   const bracketMatch = from.match(/<([^>]+)>/);
@@ -40,7 +40,7 @@ export function getContactToEmail(): string {
 }
 
 /**
- * Returns the Resend `from` address. Always uses a verified hasbrando.com sender.
+ * Returns the Resend `from` address. Always uses a verified hashbrando.com sender.
  * Falls back from onboarding@resend.dev or other invalid env values.
  */
 export function getFromEmail(): string {
