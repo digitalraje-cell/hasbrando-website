@@ -1,4 +1,5 @@
 import type { ContactFormPayload } from './types';
+import { DEFAULT_FROM_EMAIL } from '@/lib/contact/resend-config';
 import { SITE } from '@/lib/site-config';
 
 const ACCENT = '#8B5CF6';
@@ -105,4 +106,6 @@ export function buildAutoReplyHtml(name: string): string {
 
 export const LEAD_SUBJECT = 'New HasBrando Lead — Contact Form';
 export const AUTO_REPLY_SUBJECT = 'Thanks for contacting HasBrando — We received your request';
-export const FROM_EMAIL = 'HasBrando <support@hasbrando.com>';
+
+/** Default verified sender — use getFromEmail() at send time for env overrides. */
+export const FROM_EMAIL = DEFAULT_FROM_EMAIL;

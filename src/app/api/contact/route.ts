@@ -1,15 +1,19 @@
 import { randomUUID } from 'crypto';
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
 import {
   AUTO_REPLY_SUBJECT,
   buildAutoReplyHtml,
   buildLeadEmailHtml,
-  FROM_EMAIL,
   LEAD_SUBJECT,
 } from '@/lib/contact/emails';
-import { logError, logInfo, logWarn } from '@/lib/contact/logger';
+import { logError, logInfo, logResendSend, logWarn } from '@/lib/contact/logger';
 import { getClientIp, isRateLimited } from '@/lib/contact/rate-limit';
+import {
+  createResendClient,
+  getContactToEmail,
+  getFromEmail,
+  getResendApiKey,
+} from '@/lib/contact/resend-config';
 import { appendLeadToGoogleSheet } from '@/lib/contact/sheets';
 import { sendTelegramLeadAlert } from '@/lib/contact/telegram';
 import { validateContactBody } from '@/lib/contact/validate';
@@ -24,13 +28,26 @@ export async function POST(request: Request) {
   const submissionId = randomUUID();
 
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_TO_EMAIL ?? 'support@hasbrando.com';
+    const apiKey = getResendApiKey();
+    const fromEmail = getFromEmail();
+    const toEmail = getContactToEmail();
 
     if (!apiKey) {
-      logError('RESEND_API_KEY is not configured');
+      logError('RESEND_API_KEY is not configured', undefined, {
+        submissionId,
+        hasEnvVar: Boolean(process.env.RESEND_API_KEY),
+        envVarLength: process.env.RESEND_API_KEY?.length ?? 0,
+      });
       return jsonError('Email service is not configured. Please try again later.', 503);
     }
+
+    logInfo('Resend configuration loaded', {
+      submissionId,
+      fromEmail,
+      toEmail,
+      apiKeyPresent: true,
+      apiKeyPrefix: apiKey.slice(0, 6),
+    });
 
     const ip = getClientIp(
       request.headers.get('x-forwarded-for'),
@@ -38,7 +55,7 @@ export async function POST(request: Request) {
     );
 
     if (isRateLimited(ip)) {
-      logWarn('Rate limit hit', { ip });
+      logWarn('Rate limit hit', { ip, submissionId });
       return jsonError('Too many submissions. Please wait a few minutes and try again.', 429);
     }
 
@@ -57,35 +74,50 @@ export async function POST(request: Request) {
     const data = validated.data;
     const submittedAt = new Date().toISOString();
     const submittedAtDisplay = new Date(submittedAt).toUTCString();
-    const resend = new Resend(apiKey);
+    const resend = createResendClient();
+
+    if (!resend) {
+      logError('Resend client could not be created', undefined, { submissionId });
+      return jsonError('Email service is not configured. Please try again later.', 503);
+    }
 
     logInfo('Processing contact submission', { submissionId, email: data.email, ip });
 
+    const leadRequest = {
+      submissionId,
+      from: fromEmail,
+      to: [toEmail],
+      subject: LEAD_SUBJECT,
+      replyTo: data.email,
+    };
+
     const leadResult = await resend.emails.send({
-      from: FROM_EMAIL,
+      from: fromEmail,
       to: [toEmail],
       replyTo: data.email,
       subject: LEAD_SUBJECT,
       html: buildLeadEmailHtml(data, submittedAtDisplay),
     });
 
+    logResendSend('Lead email', leadRequest, leadResult);
+
     if (leadResult.error) {
-      logError('Lead email failed (Resend)', leadResult.error);
       return jsonError(
         'Unable to send your message. Please try again or email support@hasbrando.com.',
         502,
       );
     }
 
-    logInfo('Lead email sent', {
+    const autoReplyRequest = {
       submissionId,
-      resendId: leadResult.data?.id,
-      to: toEmail,
-    });
+      from: fromEmail,
+      to: [data.email],
+      subject: AUTO_REPLY_SUBJECT,
+    };
 
     const [confirmationResult, sheetsResult, telegramResult] = await Promise.allSettled([
       resend.emails.send({
-        from: FROM_EMAIL,
+        from: fromEmail,
         to: [data.email],
         subject: AUTO_REPLY_SUBJECT,
         html: buildAutoReplyHtml(data.name),
@@ -95,18 +127,9 @@ export async function POST(request: Request) {
     ]);
 
     if (confirmationResult.status === 'fulfilled') {
-      const autoReply = confirmationResult.value;
-      if (autoReply.error) {
-        logError('Confirmation email failed (Resend)', autoReply.error);
-      } else {
-        logInfo('Confirmation email sent', {
-          submissionId,
-          resendId: autoReply.data?.id,
-          to: data.email,
-        });
-      }
+      logResendSend('Confirmation email', autoReplyRequest, confirmationResult.value);
     } else {
-      logError('Confirmation email error', confirmationResult.reason, { submissionId });
+      logError('Confirmation email threw', confirmationResult.reason, autoReplyRequest);
     }
 
     if (sheetsResult.status === 'fulfilled') {
