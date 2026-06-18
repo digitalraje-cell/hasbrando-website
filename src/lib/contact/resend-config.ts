@@ -7,25 +7,26 @@ export const DEFAULT_FROM_ADDRESS = 'support@hashbrando.com';
 export const DEFAULT_FROM_EMAIL = `HasBrando <${DEFAULT_FROM_ADDRESS}>`;
 export const DEFAULT_CONTACT_TO_EMAIL = DEFAULT_FROM_ADDRESS;
 
-const BLOCKED_SENDER_PATTERNS = ['onboarding@resend.dev', '@resend.dev', '@hasbrando.com'];
+/** Legacy/wrong domains that must never be used as Resend senders. */
+const BLOCKED_SENDER_DOMAINS = ['hasbrando.com', 'resend.dev'];
 
 function extractEmailAddress(from: string): string {
   const bracketMatch = from.match(/<([^>]+)>/);
   return (bracketMatch ? bracketMatch[1] : from).trim().toLowerCase();
 }
 
-function isVerifiedSender(from: string): boolean {
-  const address = extractEmailAddress(from);
-  if (BLOCKED_SENDER_PATTERNS.some((pattern) => address.includes(pattern))) {
-    return false;
-  }
-  return address.endsWith(`@${VERIFIED_EMAIL_DOMAIN}`);
+function getEmailDomain(address: string): string {
+  const at = address.lastIndexOf('@');
+  return at === -1 ? '' : address.slice(at + 1);
 }
 
-function formatFromAddress(email: string): string {
-  const normalized = email.trim();
-  if (normalized.includes('<')) return normalized;
-  return `HasBrando <${normalized}>`;
+function isHashbrandoSender(from: string): boolean {
+  const address = extractEmailAddress(from);
+  const domain = getEmailDomain(address);
+  if (!domain || BLOCKED_SENDER_DOMAINS.includes(domain)) {
+    return false;
+  }
+  return domain === VERIFIED_EMAIL_DOMAIN && address === DEFAULT_FROM_ADDRESS;
 }
 
 export function getResendApiKey(): string | undefined {
@@ -40,24 +41,21 @@ export function getContactToEmail(): string {
 }
 
 /**
- * Returns the Resend `from` address. Always uses a verified hashbrando.com sender.
- * Falls back from onboarding@resend.dev or other invalid env values.
+ * Returns the Resend `from` address.
+ * Always `HasBrando <support@hashbrando.com>` — env overrides are ignored
+ * because a mis-set RESEND_FROM_EMAIL previously forced sends from the
+ * unverified hasbrando.com domain.
  */
 export function getFromEmail(): string {
   const configured = process.env.RESEND_FROM_EMAIL?.trim();
 
-  if (!configured) {
-    return DEFAULT_FROM_EMAIL;
-  }
-
-  if (!isVerifiedSender(configured)) {
+  if (configured && !isHashbrandoSender(configured)) {
     console.warn(
-      `[contact] RESEND_FROM_EMAIL "${configured}" is not a verified ${VERIFIED_EMAIL_DOMAIN} sender; using ${DEFAULT_FROM_EMAIL}`,
+      `[contact] Ignoring RESEND_FROM_EMAIL="${configured}" — using ${DEFAULT_FROM_EMAIL}`,
     );
-    return DEFAULT_FROM_EMAIL;
   }
 
-  return formatFromAddress(configured);
+  return DEFAULT_FROM_EMAIL;
 }
 
 export function createResendClient(): Resend | null {

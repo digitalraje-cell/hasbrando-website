@@ -91,6 +91,9 @@ export async function POST(request: Request) {
       replyTo: data.email,
     };
 
+    console.log('FINAL_FROM_EMAIL=', fromEmail);
+    console.log('RESEND_FROM_EMAIL_ENV=', process.env.RESEND_FROM_EMAIL ?? '(unset)');
+
     const leadResult = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
@@ -116,12 +119,15 @@ export async function POST(request: Request) {
     };
 
     const [confirmationResult, sheetsResult, telegramResult] = await Promise.allSettled([
-      resend.emails.send({
-        from: fromEmail,
-        to: [data.email],
-        subject: AUTO_REPLY_SUBJECT,
-        html: buildAutoReplyHtml(data.name),
-      }),
+      (async () => {
+        console.log('FINAL_FROM_EMAIL=', fromEmail);
+        return resend.emails.send({
+          from: fromEmail,
+          to: [data.email],
+          subject: AUTO_REPLY_SUBJECT,
+          html: buildAutoReplyHtml(data.name),
+        });
+      })(),
       appendLeadToGoogleSheet({ submittedAt, submissionId, data }),
       sendTelegramLeadAlert(data),
     ]);
