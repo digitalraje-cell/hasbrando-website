@@ -7,7 +7,7 @@ import { BLOG_POSTS } from '@/lib/data/blog';
 
 export const metadata = createMetadata({
   title: 'Insights',
-  description: 'Insights on branding, growth strategy, and market positioning from the HasBrando team.',
+  description: 'Insights on branding, growth strategy, and market positioning from the Hashbrando team.',
   path: '/blog',
 });
 

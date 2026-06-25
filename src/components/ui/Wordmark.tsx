@@ -19,9 +19,9 @@ export default function Wordmark({ className = '', size = 'md', variant = 'dark'
     <Link
       href="/"
       className={`font-display tracking-tight no-underline ${sizes[size]} ${color} ${className}`}
-      aria-label="HasBrando — Home"
+      aria-label="Hashbrando — Home"
     >
-      HasBrando
+      Hashbrando
     </Link>
   );
 }

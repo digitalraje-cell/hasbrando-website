@@ -144,7 +144,7 @@ export const PRICING_FAQS = [
   {
     question: 'Do you work internationally?',
     answer:
-      'Yes. HasBrando partners with founders and brands across North America, Europe, the Middle East, Asia, and Australia. Our team operates across time zones, and all pricing is quoted in USD for international clarity.',
+      'Yes. Hashbrando partners with founders and brands across North America, Europe, the Middle East, Asia, and Australia. Our team operates across time zones, and all pricing is quoted in USD for international clarity.',
   },
   {
     question: 'Is there a minimum engagement period?',

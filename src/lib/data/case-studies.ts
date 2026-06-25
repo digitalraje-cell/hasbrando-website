@@ -53,7 +53,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     services: ['Personal Branding', 'Paid Ads', 'Funnel Building'],
     testimonial: {
-      quote: 'HasBrando transformed how the market sees me. I went from chasing clients to choosing who I work with.',
+      quote: 'Hashbrando transformed how the market sees me. I went from chasing clients to choosing who I work with.',
       author: 'Sarah Mitchell',
       role: 'Founder, Elevate Coaching',
     },

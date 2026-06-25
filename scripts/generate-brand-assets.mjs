@@ -31,7 +31,7 @@ async function generateFaviconIco() {
 }
 
 async function main() {
-  console.log('Generating HasBrando brand assets…');
+  console.log('Generating Hashbrando brand assets…');
   await rasterize('icon.svg', 16, 'favicon-16x16.png');
   await rasterize('icon.svg', 32, 'favicon-32x32.png');
   await rasterize('icon.svg', 180, 'apple-touch-icon.png');

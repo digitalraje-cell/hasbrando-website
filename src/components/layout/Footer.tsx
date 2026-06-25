@@ -58,7 +58,7 @@ export default function Footer() {
 
         <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-[var(--border-dark)] pt-8 md:flex-row">
           <p className="text-sm text-[var(--text-on-dark-subtle)]">
-            © 2026 HasBrando · Lifetop Academy ·{' '}
+            © 2026 Hashbrando · Lifetop Academy ·{' '}
             <a href={`mailto:${SITE.email}`} className="text-[var(--text-on-dark-muted)] transition hover:text-white">
               {SITE.email}
             </a>

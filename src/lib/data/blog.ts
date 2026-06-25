@@ -17,7 +17,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Branding',
     date: '2026-05-15',
     readTime: '6 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
   {
     slug: 'performance-marketing-playbook-2026',
@@ -27,7 +27,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Performance Marketing',
     date: '2026-05-08',
     readTime: '8 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
   {
     slug: 'personal-brand-coaches',
@@ -37,7 +37,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Personal Branding',
     date: '2026-04-28',
     readTime: '7 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
   {
     slug: 'funnel-optimization-guide',
@@ -47,7 +47,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Funnel Building',
     date: '2026-04-18',
     readTime: '5 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
   {
     slug: 'content-marketing-authority',
@@ -57,7 +57,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Content Marketing',
     date: '2026-04-05',
     readTime: '6 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
   {
     slug: 'paid-ads-creative-testing',
@@ -67,6 +67,6 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Paid Ads',
     date: '2026-03-22',
     readTime: '7 min',
-    author: 'HasBrando Team',
+    author: 'Hashbrando Team',
   },
 ];

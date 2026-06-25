@@ -6,7 +6,7 @@ import { TERMS_OF_SERVICE } from '@/lib/data/terms';
 export const metadata = createMetadata({
   title: 'Terms & Conditions',
   description:
-    'HasBrando terms and conditions for branding, growth consultancy, and strategic partnership engagements.',
+    'Hashbrando terms and conditions for branding, growth consultancy, and strategic partnership engagements.',
   path: '/terms',
 });
 

@@ -4,7 +4,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = createMetadata({
   title: 'Thank You',
-  description: 'Thank you for contacting HasBrando.',
+  description: 'Thank you for contacting Hashbrando.',
   path: '/thanks',
   noIndex: true,
 });

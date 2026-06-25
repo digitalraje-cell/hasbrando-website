@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 export const VERIFIED_EMAIL_DOMAIN = 'hashbrando.com';
 
 export const DEFAULT_FROM_ADDRESS = 'support@hashbrando.com';
-export const DEFAULT_FROM_EMAIL = `HasBrando <${DEFAULT_FROM_ADDRESS}>`;
+export const DEFAULT_FROM_EMAIL = `Hashbrando <${DEFAULT_FROM_ADDRESS}>`;
 export const DEFAULT_CONTACT_TO_EMAIL = DEFAULT_FROM_ADDRESS;
 
 /** Legacy/wrong domains that must never be used as Resend senders. */
@@ -42,7 +42,7 @@ export function getContactToEmail(): string {
 
 /**
  * Returns the Resend `from` address.
- * Always `HasBrando <support@hashbrando.com>` — env overrides are ignored
+ * Always `Hashbrando <support@hashbrando.com>` — env overrides are ignored
  * because a mis-set RESEND_FROM_EMAIL previously forced sends from the
  * unverified hasbrando.com domain.
  */

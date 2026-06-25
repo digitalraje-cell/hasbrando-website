@@ -8,7 +8,7 @@ import { PROCESS_STEPS, WHY_US } from '@/lib/data/stats';
 
 export const metadata = createMetadata({
   title: 'About',
-  description: 'Learn about HasBrando — a premium branding consultancy for ambitious founders and brands building market authority.',
+  description: 'Learn about Hashbrando — a premium branding consultancy for ambitious founders and brands building market authority.',
   path: '/about',
 });
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About"
-        title="The Thinking Behind HasBrando"
+        title="The Thinking Behind Hashbrando"
         description="A premium branding consultancy for founders and brands who refuse to compete on price."
         image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=1800&q=90&auto=format&fit=crop"
       />
@@ -72,7 +72,7 @@ export default function AboutPage() {
               Great brands deserve great positioning
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[var(--text-muted)]">
-              HasBrando was founded on a conviction: too many exceptional brands remain invisible — not from lack of expertise, but from lack of positioning and creative systems worthy of their ambition.
+              Hashbrando was founded on a conviction: too many exceptional brands remain invisible — not from lack of expertise, but from lack of positioning and creative systems worthy of their ambition.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-muted)]">
               We built a consultancy that combines the creative excellence of a world-class studio with the strategic depth of a premium advisory firm. Today, we partner with brands across 32 countries.

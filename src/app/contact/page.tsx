@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm';
 
 export const metadata = createMetadata({
   title: 'Contact',
-  description: 'Get in touch with HasBrando. Tell us about your brand and market ambitions.',
+  description: 'Get in touch with Hashbrando. Tell us about your brand and market ambitions.',
   path: '/contact',
 });
 

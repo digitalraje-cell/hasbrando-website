@@ -7,7 +7,7 @@ import { FAQS } from '@/lib/data/faqs';
 
 export const metadata = createMetadata({
   title: 'FAQ',
-  description: 'Frequently asked questions about HasBrando engagements, process, and strategic partnerships.',
+  description: 'Frequently asked questions about Hashbrando engagements, process, and strategic partnerships.',
   path: '/faq',
 });
 

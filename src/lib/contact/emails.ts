@@ -36,7 +36,7 @@ function emailShell(title: string, body: string): string {
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;background:${SURFACE};border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
         <tr>
           <td style="padding:28px 32px 20px;text-align:center;background:linear-gradient(180deg,#0a0a14 0%,${SURFACE} 100%);">
-            <span style="font-size:24px;font-weight:700;color:${TEXT};letter-spacing:-0.03em;">Has<span style="background:linear-gradient(135deg,${ACCENT},${GOLD});-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Brando</span></span>
+            <span style="font-size:24px;font-weight:700;color:${TEXT};letter-spacing:-0.03em;">Hash<span style="background:linear-gradient(135deg,${ACCENT},${GOLD});-webkit-background-clip:text;-webkit-text-fill-color:transparent;">brando</span></span>
           </td>
         </tr>
         <tr>
@@ -51,7 +51,7 @@ function emailShell(title: string, body: string): string {
         </tr>
         <tr>
           <td style="padding:20px 32px;border-top:1px solid rgba(255,255,255,0.06);color:${MUTED};font-size:12px;line-height:1.5;">
-            © ${new Date().getFullYear()} HasBrando · Lifetop Academy · Premium Creative Growth Agency
+            © ${new Date().getFullYear()} Hashbrando · Lifetop Academy · Premium Creative Growth Agency
           </td>
         </tr>
       </table>
@@ -88,7 +88,7 @@ export function buildAutoReplyHtml(name: string): string {
 
   const body = `
     <p style="margin:0 0 16px;color:${TEXT};">Hi ${firstName},</p>
-    <p style="margin:0 0 16px;color:${TEXT};">Thank you for reaching out to <strong style="color:${TEXT};">HasBrando</strong>.</p>
+    <p style="margin:0 0 16px;color:${TEXT};">Thank you for reaching out to <strong style="color:${TEXT};">Hashbrando</strong>.</p>
     <p style="margin:0 0 16px;color:${TEXT};">We&apos;ve received your inquiry and our team is reviewing your requirements. You can expect a response within <strong style="color:${ACCENT};">24 hours</strong>.</p>
     <p style="margin:0 0 16px;color:${TEXT};">Want to skip the wait? Book a strategy call directly and speak with one of our growth strategists.</p>
     <table role="presentation" cellspacing="0" cellpadding="0" style="margin:28px 0;">
@@ -99,13 +99,13 @@ export function buildAutoReplyHtml(name: string): string {
       </tr>
     </table>
     <p style="margin:0 0 24px;color:${MUTED};font-size:14px;">Email: <a href="mailto:${supportEmail}" style="color:${ACCENT};text-decoration:none;">${supportEmail}</a></p>
-    <p style="margin:0;color:${MUTED};font-size:14px;">— Team HasBrando<br/>Premium Creative Growth Agency</p>`;
+    <p style="margin:0;color:${MUTED};font-size:14px;">— Team Hashbrando<br/>Premium Creative Growth Agency</p>`;
 
-  return emailShell('Thanks for contacting HasBrando', body);
+  return emailShell('Thanks for contacting Hashbrando', body);
 }
 
-export const LEAD_SUBJECT = 'New HasBrando Lead — Contact Form';
-export const AUTO_REPLY_SUBJECT = 'Thanks for contacting HasBrando — We received your request';
+export const LEAD_SUBJECT = 'New Hashbrando Lead — Contact Form';
+export const AUTO_REPLY_SUBJECT = 'Thanks for contacting Hashbrando — We received your request';
 
 /** Default verified sender — use getFromEmail() at send time for env overrides. */
 export const FROM_EMAIL = DEFAULT_FROM_EMAIL;

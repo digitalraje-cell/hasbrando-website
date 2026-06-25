@@ -52,7 +52,7 @@ export default function HomePage() {
       <section className="section section--subtle">
         <div className="container">
           <SectionHeading
-            label="Why HasBrando"
+            label="Why Hashbrando"
             title="A consultancy, not a vendor"
             subtitle="We take on fewer clients to deliver the strategic depth and creative excellence your brand deserves."
           />

@@ -78,7 +78,7 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS = [
   {
     quote:
-      'HasBrando rebuilt how our market perceives us. We raised prices 40% and revenue still doubled in six months.',
+      'Hashbrando rebuilt how our market perceives us. We raised prices 40% and revenue still doubled in six months.',
     author: 'James Chen',
     role: 'CEO',
     company: 'FlowStack',
@@ -94,7 +94,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      'From invisible to fully booked. HasBrando transformed my practice into a brand clients seek out — and pay premium for.',
+      'From invisible to fully booked. Hashbrando transformed my practice into a brand clients seek out — and pay premium for.',
     author: 'Sarah Mitchell',
     role: 'Founder',
     company: 'Elevate Coaching',

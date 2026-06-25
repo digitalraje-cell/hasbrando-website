@@ -3,7 +3,7 @@ import type { LegalDocument } from './legal-types';
 export const PRIVACY_POLICY: LegalDocument = {
   lastUpdated: 'June 8, 2026',
   intro:
-    'HasBrando ("we," "us," or "our") is a premium branding and growth consultancy operated within the Lifetop Academy business ecosystem. We help founders, consultants, and ambitious brands build authority, positioning, and scalable growth through branding strategy, performance marketing, paid media, content systems, funnel architecture, website design, lead generation, and strategic consulting. This Privacy Policy explains how we collect, use, store, and protect personal information when you visit hasbrando.com, engage with our services, or communicate with our team.',
+    'Hashbrando ("we," "us," or "our") is a premium branding and growth consultancy operated within the Lifetop Academy business ecosystem. We help founders, consultants, and ambitious brands build authority, positioning, and scalable growth through branding strategy, performance marketing, paid media, content systems, funnel architecture, website design, lead generation, and strategic consulting. This Privacy Policy explains how we collect, use, store, and protect personal information when you visit hasbrando.com, engage with our services, or communicate with our team.',
   sections: [
     {
       id: 'introduction',
@@ -11,11 +11,11 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'We respect your privacy and are committed to handling personal information responsibly. This policy applies to all visitors of our website, prospective clients, active clients, and individuals who interact with HasBrando through contact forms, strategy calls, email, or third-party platforms integrated with our services.',
+          text: 'We respect your privacy and are committed to handling personal information responsibly. This policy applies to all visitors of our website, prospective clients, active clients, and individuals who interact with Hashbrando through contact forms, strategy calls, email, or third-party platforms integrated with our services.',
         },
         {
           type: 'p',
-          text: 'By using our website or engaging with HasBrando, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please discontinue use of our website and services.',
+          text: 'By using our website or engaging with Hashbrando, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please discontinue use of our website and services.',
         },
       ],
     },
@@ -87,7 +87,7 @@ export const PRIVACY_POLICY: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'Booking data is shared with HasBrando to confirm appointments, prepare for consultations, and maintain scheduling records. Calendly\'s own privacy policy governs data collected on their platform. We encourage you to review their policies when scheduling.',
+          text: 'Booking data is shared with Hashbrando to confirm appointments, prepare for consultations, and maintain scheduling records. Calendly\'s own privacy policy governs data collected on their platform. We encourage you to review their policies when scheduling.',
         },
       ],
     },
@@ -137,7 +137,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando may use marketing tools to reach individuals who have expressed interest in our services or visited our website. This may include email nurture sequences, social media outreach, and remarketing campaigns designed to share relevant insights about branding and growth.',
+          text: 'Hashbrando may use marketing tools to reach individuals who have expressed interest in our services or visited our website. This may include email nurture sequences, social media outreach, and remarketing campaigns designed to share relevant insights about branding and growth.',
         },
         {
           type: 'p',
@@ -190,7 +190,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando may implement the Meta (Facebook) Pixel or similar conversion tracking technologies in the future to measure advertising performance and build relevant audiences for our own marketing.',
+          text: 'Hashbrando may implement the Meta (Facebook) Pixel or similar conversion tracking technologies in the future to measure advertising performance and build relevant audiences for our own marketing.',
         },
         {
           type: 'p',
@@ -246,7 +246,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando serves clients across North America, Europe, the Middle East, Asia, Australia, and beyond. Our primary operations are based in India through Lifetop Academy, with team members collaborating across time zones.',
+          text: 'Hashbrando serves clients across North America, Europe, the Middle East, Asia, Australia, and beyond. Our primary operations are based in India through Lifetop Academy, with team members collaborating across time zones.',
         },
         {
           type: 'p',
@@ -286,7 +286,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando does not sell, rent, or trade your personal information to third parties for their marketing purposes.',
+          text: 'Hashbrando does not sell, rent, or trade your personal information to third parties for their marketing purposes.',
         },
         {
           type: 'p',
@@ -314,7 +314,7 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando services are designed for business professionals, founders, and brand operators. Our website and services are not directed at individuals under the age of 18.',
+          text: 'Hashbrando services are designed for business professionals, founders, and brand operators. Our website and services are not directed at individuals under the age of 18.',
         },
         {
           type: 'p',
@@ -342,13 +342,13 @@ export const PRIVACY_POLICY: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'For privacy-related questions, data requests, or concerns, contact HasBrando:',
+          text: 'For privacy-related questions, data requests, or concerns, contact Hashbrando:',
         },
         {
           type: 'ul',
           items: [
             'Email: support@hashbrando.com',
-            'Business: HasBrando — Premium Branding Consultancy',
+            'Business: Hashbrando — Premium Branding Consultancy',
             'Operated within the Lifetop Academy ecosystem',
             'Address: L2 B/68, Mohan Garden, Uttam Nagar, New Delhi 110059, India',
             'Website: https://hasbrando.com',

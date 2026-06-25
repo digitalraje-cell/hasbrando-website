@@ -13,7 +13,7 @@ type CtaSectionProps = {
 
 export default function CtaSection({
   title = 'Ready to Build a Brand People Remember?',
-  subtitle = 'Let\'s discuss how HasBrando can position your brand for authority, trust and long-term growth.',
+  subtitle = 'Let\'s discuss how Hashbrando can position your brand for authority, trust and long-term growth.',
   primaryLabel = 'Book Strategy Call',
   primaryHref = '/book-strategy',
   secondaryLabel = 'View Work',

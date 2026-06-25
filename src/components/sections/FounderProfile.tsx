@@ -36,7 +36,7 @@ export default function FounderProfile() {
           <h2 className="founder-profile__headline">
             The Thinking Behind
             <br />
-            HasBrando
+            Hashbrando
           </h2>
 
           <div className="founder-profile__copy">

@@ -1,4 +1,4 @@
-# HasBrando — Premium Creative Growth Agency Website
+# Hashbrando — Premium Creative Growth Agency Website
 
 A premium, conversion-focused agency website built with Next.js 16, TypeScript, and Tailwind CSS.
 
@@ -29,7 +29,7 @@ Copy `.env.example` to `.env.local` and configure:
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `RESEND_API_KEY` | Yes | Resend API key for contact form emails |
-| `RESEND_FROM_EMAIL` | No | Ignored — sender is hardcoded to `HasBrando <support@hashbrando.com>` |
+| `RESEND_FROM_EMAIL` | No | Ignored — sender is hardcoded to `Hashbrando <support@hashbrando.com>` |
 | `CONTACT_TO_EMAIL` | No | Lead notification inbox (default: support@hashbrando.com) |
 | `CONTACT_RATE_LIMIT_DISABLED` | No | Set `true` for local dev |
 | `GOOGLE_SHEETS_SPREADSHEET_ID` | Optional | Google Sheet ID for lead storage |
@@ -98,4 +98,4 @@ npm run lint     # ESLint
 
 ## License
 
-© 2026 HasBrando · Lifetop Academy
+© 2026 Hashbrando · Lifetop Academy

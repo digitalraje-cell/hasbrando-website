@@ -3,7 +3,7 @@ import type { LegalDocument } from './legal-types';
 export const TERMS_OF_SERVICE: LegalDocument = {
   lastUpdated: 'June 8, 2026',
   intro:
-    'These Terms & Conditions ("Terms") govern your use of hasbrando.com and your engagement with HasBrando, a premium branding and growth consultancy operated within the Lifetop Academy business ecosystem. By accessing our website, submitting an inquiry, booking a strategy call, or entering into a service agreement, you agree to these Terms. Please read them carefully before engaging with our services.',
+    'These Terms & Conditions ("Terms") govern your use of hasbrando.com and your engagement with Hashbrando, a premium branding and growth consultancy operated within the Lifetop Academy business ecosystem. By accessing our website, submitting an inquiry, booking a strategy call, or entering into a service agreement, you agree to these Terms. Please read them carefully before engaging with our services.',
   sections: [
     {
       id: 'acceptance-of-terms',
@@ -25,7 +25,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando provides premium branding, positioning, and growth consultancy services for founders, consultants, personal brands, startups, and established businesses. Our services may include, but are not limited to:',
+          text: 'Hashbrando provides premium branding, positioning, and growth consultancy services for founders, consultants, personal brands, startups, and established businesses. Our services may include, but are not limited to:',
         },
         {
           type: 'ul',
@@ -64,7 +64,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando engagements may include strategic consulting, creative direction, hands-on execution, or a combination depending on your selected engagement model. Strategy-focused tiers emphasise positioning, advisory, and systems architecture. Growth partnership tiers include execution across marketing, creative, and acquisition channels.',
+          text: 'Hashbrando engagements may include strategic consulting, creative direction, hands-on execution, or a combination depending on your selected engagement model. Strategy-focused tiers emphasise positioning, advisory, and systems architecture. Growth partnership tiers include execution across marketing, creative, and acquisition channels.',
         },
         {
           type: 'p',
@@ -86,7 +86,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
             'Provide timely access to brand assets, accounts, analytics, and relevant business information',
             'Designate a primary point of contact with decision-making authority',
             'Respond to requests, approvals, and feedback within agreed timeframes (typically 3–5 business days)',
-            'Ensure all materials provided to HasBrando are accurate and that you hold necessary rights to use them',
+            'Ensure all materials provided to Hashbrando are accurate and that you hold necessary rights to use them',
             'Maintain active ad account billing and platform compliance when paid media is in scope',
             'Communicate changes in business direction, offers, or constraints that may affect strategy',
           ],
@@ -99,7 +99,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando is committed to delivering professional, strategic, and high-quality work. However, we do not guarantee specific business outcomes, revenue figures, lead volumes, follower counts, ranking positions, or return on investment.',
+          text: 'Hashbrando is committed to delivering professional, strategic, and high-quality work. However, we do not guarantee specific business outcomes, revenue figures, lead volumes, follower counts, ranking positions, or return on investment.',
         },
         {
           type: 'p',
@@ -143,7 +143,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando offers tiered engagement models (including Foundation, Growth Partner, and Category Leader partnerships) as described on our Pricing page. These models provide a framework for scope and investment. Final terms are confirmed in individual agreements.',
+          text: 'Hashbrando offers tiered engagement models (including Foundation, Growth Partner, and Category Leader partnerships) as described on our Pricing page. These models provide a framework for scope and investment. Final terms are confirmed in individual agreements.',
         },
         {
           type: 'p',
@@ -157,7 +157,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando engagements are structured with clear, professional payment terms designed to protect both parties and ensure focused delivery. All fees are quoted in USD unless otherwise agreed in writing.',
+          text: 'Hashbrando engagements are structured with clear, professional payment terms designed to protect both parties and ensure focused delivery. All fees are quoted in USD unless otherwise agreed in writing.',
         },
         {
           type: 'ul',
@@ -223,7 +223,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'HasBrando will provide all completed deliverables corresponding to paid periods and issue a final account statement upon termination. We approach every conclusion professionally, with clarity and respect for the partnership.',
+          text: 'Hashbrando will provide all completed deliverables corresponding to paid periods and issue a final account statement upon termination. We approach every conclusion professionally, with clarity and respect for the partnership.',
         },
       ],
     },
@@ -233,7 +233,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando retains ownership of all pre-existing methodologies, frameworks, templates, tools, and proprietary processes used in delivering services. Website content, case studies, and marketing materials on hasbrando.com remain our intellectual property.',
+          text: 'Hashbrando retains ownership of all pre-existing methodologies, frameworks, templates, tools, and proprietary processes used in delivering services. Website content, case studies, and marketing materials on hasbrando.com remain our intellectual property.',
         },
         {
           type: 'p',
@@ -252,10 +252,10 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         {
           type: 'ul',
           items: [
-            'Work-in-progress files, source files, and internal strategy documents may be retained by HasBrando unless otherwise agreed',
-            'HasBrando may showcase completed work in portfolios, case studies, and marketing materials unless a confidentiality agreement prohibits it',
+            'Work-in-progress files, source files, and internal strategy documents may be retained by Hashbrando unless otherwise agreed',
+            'Hashbrando may showcase completed work in portfolios, case studies, and marketing materials unless a confidentiality agreement prohibits it',
             'Third-party stock assets, fonts, and licensed materials remain subject to their respective licenses',
-            'Clients must not resell, sublicense, or redistribute HasBrando deliverables as templates or agency products',
+            'Clients must not resell, sublicense, or redistribute Hashbrando deliverables as templates or agency products',
           ],
         },
       ],
@@ -266,11 +266,11 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'When paid advertising is included in scope, media spend is paid directly by the client to advertising platforms (Meta, Google, LinkedIn, etc.) unless explicitly included in HasBrando fees.',
+          text: 'When paid advertising is included in scope, media spend is paid directly by the client to advertising platforms (Meta, Google, LinkedIn, etc.) unless explicitly included in Hashbrando fees.',
         },
         {
           type: 'p',
-          text: 'Clients are responsible for maintaining active billing on ad accounts, complying with platform policies, and approving budgets. HasBrando is not liable for account suspensions, policy violations, or spend incurred due to client account issues.',
+          text: 'Clients are responsible for maintaining active billing on ad accounts, complying with platform policies, and approving budgets. Hashbrando is not liable for account suspensions, policy violations, or spend incurred due to client account issues.',
         },
       ],
     },
@@ -284,7 +284,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'HasBrando is not responsible for platform outages, API changes, feature deprecations, or policy enforcement actions taken by third parties. We adapt strategies as platforms evolve but cannot control external systems.',
+          text: 'Hashbrando is not responsible for platform outages, API changes, feature deprecations, or policy enforcement actions taken by third parties. We adapt strategies as platforms evolve but cannot control external systems.',
         },
       ],
     },
@@ -308,11 +308,11 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'To the fullest extent permitted by law, HasBrando\'s total liability for any claim arising from our services shall not exceed the fees paid by the client to HasBrando in the three (3) months preceding the claim.',
+          text: 'To the fullest extent permitted by law, Hashbrando\'s total liability for any claim arising from our services shall not exceed the fees paid by the client to Hashbrando in the three (3) months preceding the claim.',
         },
         {
           type: 'p',
-          text: 'HasBrando shall not be liable for indirect, incidental, consequential, or punitive damages including lost profits, lost revenue, lost data, or business interruption — regardless of whether we were advised of the possibility of such damages.',
+          text: 'Hashbrando shall not be liable for indirect, incidental, consequential, or punitive damages including lost profits, lost revenue, lost data, or business interruption — regardless of whether we were advised of the possibility of such damages.',
         },
       ],
     },
@@ -326,7 +326,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'HasBrando will communicate proactively about timeline impacts. Extended delays caused by client non-responsiveness may result in schedule adjustments without liability on our part.',
+          text: 'Hashbrando will communicate proactively about timeline impacts. Extended delays caused by client non-responsiveness may result in schedule adjustments without liability on our part.',
         },
       ],
     },
@@ -340,7 +340,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
         },
         {
           type: 'p',
-          text: 'Urgent matters affecting live campaigns or time-sensitive launches should be flagged clearly. HasBrando is not obligated to monitor social media DMs or informal channels unless specified in your agreement.',
+          text: 'Urgent matters affecting live campaigns or time-sensitive launches should be flagged clearly. Hashbrando is not obligated to monitor social media DMs or informal channels unless specified in your agreement.',
         },
       ],
     },
@@ -364,7 +364,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
       blocks: [
         {
           type: 'p',
-          text: 'HasBrando may suspend or terminate an engagement if payment obligations are not met, these Terms are materially breached, or the working relationship becomes unproductive due to conduct inconsistent with a professional partnership.',
+          text: 'Hashbrando may suspend or terminate an engagement if payment obligations are not met, these Terms are materially breached, or the working relationship becomes unproductive due to conduct inconsistent with a professional partnership.',
         },
         {
           type: 'p',
@@ -398,7 +398,7 @@ export const TERMS_OF_SERVICE: LegalDocument = {
           type: 'ul',
           items: [
             'Email: support@hashbrando.com',
-            'Business: HasBrando — Premium Branding Consultancy',
+            'Business: Hashbrando — Premium Branding Consultancy',
             'Operated within the Lifetop Academy ecosystem',
             'Address: L2 B/68, Mohan Garden, Uttam Nagar, New Delhi 110059, India',
             'Website: https://hasbrando.com',

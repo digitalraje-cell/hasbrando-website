@@ -5,7 +5,7 @@ import PageHero from '@/components/sections/PageHero';
 
 export const metadata = createMetadata({
   title: 'Book Strategy Call',
-  description: 'Book a strategy call with HasBrando. Discuss your brand, positioning, and market opportunities.',
+  description: 'Book a strategy call with Hashbrando. Discuss your brand, positioning, and market opportunities.',
   path: '/book-strategy',
 });
 

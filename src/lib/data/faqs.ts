@@ -5,12 +5,12 @@ export type FAQ = {
 
 export const FAQS: FAQ[] = [
   {
-    question: 'Who does HasBrando work with?',
+    question: 'Who does Hashbrando work with?',
     answer:
       'Founders, CEOs, coaches, consultants, startups, D2C brands, and personal brands who invest seriously in positioning. Our clients typically engage at $5K–$20K/month for strategic brand and acquisition partnerships.',
   },
   {
-    question: 'How is HasBrando different from other agencies?',
+    question: 'How is Hashbrando different from other agencies?',
     answer:
       'We operate as a branding consultancy first — not a performance marketing shop with a logo service attached. Editorial creative, strategic positioning, and acquisition systems built as one cohesive brand experience.',
   },

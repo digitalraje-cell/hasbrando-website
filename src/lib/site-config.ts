@@ -1,8 +1,8 @@
 export const SITE = {
-  name: 'HasBrando',
+  name: 'Hashbrando',
   tagline: 'Premium Branding Consultancy',
   description:
-    'HasBrando is a premium branding consultancy helping founders and consultants build authority, trust and market positioning through strategic creative and performance systems.',
+    'Hashbrando is a premium branding consultancy helping founders and consultants build authority, trust and market positioning through strategic creative and performance systems.',
   url: 'https://hasbrando.com',
   email: 'support@hashbrando.com',
   phone: '+91 91157 21519',
@@ -33,7 +33,7 @@ export const SITE = {
     instagram: 'https://instagram.com/hasbrando',
     linkedin: 'https://linkedin.com/company/hasbrando',
     x: 'https://x.com/hasbrando',
-    // TODO: Replace with official HasBrando Facebook URL when the page is live
+    // TODO: Replace with official Hashbrando Facebook URL when the page is live
     facebook: 'https://facebook.com/hasbrando',
     youtube: 'https://youtube.com/@hasbrando',
   },
@@ -46,11 +46,11 @@ export const SOCIAL_LINKS: ReadonlyArray<{
   href: string;
   ariaLabel: string;
 }> = [
-  { id: 'linkedin', href: SITE.social.linkedin, ariaLabel: 'Visit HasBrando on LinkedIn' },
-  { id: 'instagram', href: SITE.social.instagram, ariaLabel: 'Visit HasBrando on Instagram' },
-  { id: 'youtube', href: SITE.social.youtube, ariaLabel: 'Visit HasBrando on YouTube' },
-  { id: 'x', href: SITE.social.x, ariaLabel: 'Visit HasBrando on X' },
-  { id: 'facebook', href: SITE.social.facebook, ariaLabel: 'Visit HasBrando on Facebook' },
+  { id: 'linkedin', href: SITE.social.linkedin, ariaLabel: 'Visit Hashbrando on LinkedIn' },
+  { id: 'instagram', href: SITE.social.instagram, ariaLabel: 'Visit Hashbrando on Instagram' },
+  { id: 'youtube', href: SITE.social.youtube, ariaLabel: 'Visit Hashbrando on YouTube' },
+  { id: 'x', href: SITE.social.x, ariaLabel: 'Visit Hashbrando on X' },
+  { id: 'facebook', href: SITE.social.facebook, ariaLabel: 'Visit Hashbrando on Facebook' },
 ];
 
 export const NAV_LINKS = [

@@ -6,7 +6,7 @@ import { PRIVACY_POLICY } from '@/lib/data/privacy-policy';
 export const metadata = createMetadata({
   title: 'Privacy Policy',
   description:
-    'HasBrando privacy policy — how we collect, use, and protect your information across branding, marketing, and consulting engagements.',
+    'Hashbrando privacy policy — how we collect, use, and protect your information across branding, marketing, and consulting engagements.',
   path: '/privacy',
 });
 

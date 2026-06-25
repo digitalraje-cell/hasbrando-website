@@ -10,7 +10,7 @@ import { CASE_STUDIES } from '@/lib/data/case-studies';
 export const metadata = createMetadata({
   title: 'Work',
   description:
-    'Brand transformations from HasBrando — challenge, strategy, execution and outcome for premium founders and consultants.',
+    'Brand transformations from Hashbrando — challenge, strategy, execution and outcome for premium founders and consultants.',
   path: '/work',
   keywords: ['branding case studies', 'brand transformation', 'premium agency work'],
 });

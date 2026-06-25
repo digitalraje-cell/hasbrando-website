@@ -7,7 +7,7 @@ function escapeTelegram(text: string): string {
 
 export function buildTelegramMessage(data: ContactFormPayload): string {
   return [
-    '🚀 <b>New HasBrando Lead</b>',
+    '🚀 <b>New Hashbrando Lead</b>',
     '',
     `👤 <b>Name:</b> ${escapeTelegram(data.name)}`,
     `📧 <b>Email:</b> ${escapeTelegram(data.email)}`,
